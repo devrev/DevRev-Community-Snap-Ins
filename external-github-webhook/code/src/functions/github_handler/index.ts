@@ -14,6 +14,12 @@ async function handleEvent(event: any) {
 
   // Extract the part ID and commits from the event
   const partID = event.input_data.global_values['part_id'];
+  try {
+    event.payload = JSON.parse(event.payload.payload[0]);
+  } catch (error) {
+    console.error('Error parsing payload', error);
+    return;
+  }
   const commits = event.payload['commits'];
 
   // Iterate through commits and append the commit message to the body of the comment
