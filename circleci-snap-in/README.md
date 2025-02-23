@@ -1,12 +1,9 @@
 # CircleCI Snap-in
 
 Snap-in that syncs pipeline, workflow and jobs to DevRev using webhooks.
-There is also a command to generate AI insights from the synced data. The insights could be one of the following:
-1. Flaky Test Issue Creation (issue_creation)
-  1. The command creates an Issue for the Flaky Test.
-  2. The issue includes details from the CircleCI API response like test name, classname, file, times flaked, and the workflow and job information.
-  3. The AI agent intelligently assigns the issue to the developer most recently associated with the code or test file, streamlining investigation.
-2. Intelligent Build Failure Analysis (build_failure_analysis)
+There is also a command to generate AI insights from the synced data. 
+The insights are as follows:
+Intelligent Build Failure Analysis (build_failure_analysis)
   1. Command pulls build logs from CircleCI.
   2. Analyze the logs to identify root causes, error messages, and potential solutions.
   3. AI agent posts a comment on the associated DevRev issue summarizing the analysis and suggesting troubleshooting steps.
@@ -18,7 +15,7 @@ There is also a command to generate AI insights from the synced data. The insigh
 
 To run the command : 
 ```
-/generateInsights pipeline_id command_type
+/generateInsights jobId
 ```
 
 ## Requirements
@@ -45,7 +42,7 @@ Once you are done with the testing, run the following commands to activate your 
 Navigate to the directory with ```manifest.yaml```
 ```
 source .env
-echo $DEVREV_TOKEN | devrev profiles set-token --org <org_name> --usr <email>
+echo $DEVREV_TOKEN | devrev profiles set-token --org $DEV_ORG --usr $USER_EMAIL
 ```
 
 2. Start test server
