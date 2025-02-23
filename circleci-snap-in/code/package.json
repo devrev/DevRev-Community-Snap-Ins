@@ -1,0 +1,16 @@
+{
+  "name": "circleci-snap-in",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Rushil Venkateswar",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@devrev/typescript-sdk": "^1.1.53",
+    "@langchain/groq": "^0.1.3",
+    "langchain": "^0.3.19"
+  }
+}
