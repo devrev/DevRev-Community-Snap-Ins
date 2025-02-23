@@ -16,12 +16,6 @@ keyrings:
       types:
         - snap_in_secret
 
-    - name: openai_api_key
-      display_name: OpenAI API Key
-      description: API Key for using OpenAI ChatGPT, this is optional
-      types:
-        - snap_in_secret
-
     - name: groq_api_key
       display_name: Groq API Key
       description: API Key for using Groq, follow https://console.groq.com/keys to generate a free API Key
@@ -65,8 +59,8 @@ event_sources:
 
 
 functions:
-# - name: generate_insights
-#   description: Generate insights based on data pulled from CircleCI. The insights could be one of :- issue_creation OR build_failure_analysis.
+  - name: generate_insights
+    description: Generate insights based on jobId from CircleCI. 
 
   - name: sync_circleci_data
     description: Sync CircleCI data to DevRev.
@@ -79,16 +73,13 @@ automations:
     function: sync_circleci_data
       
 
-# commands:
-#   - name: generateInsights
-#     namespace: circleci
-#     description: Generate insights and recommendations based on CircleCI data.
-#     surfaces:
-#       - surface: discussions
-#         object_types:
-#           - issue
-#           - ticket
-#           - part
-#           - conversation
-#     usage_hint: "[pipeline_id] [insight_type]"
-#     function: generate_insights
+commands:
+  - name: generateInsights
+    namespace: circleci
+    description: Generate insights and recommendations based on CircleCI data.
+    surfaces:
+      - surface: discussions
+        object_types:
+          - issue
+    usage_hint: "[jobId]"
+    function: generate_insights

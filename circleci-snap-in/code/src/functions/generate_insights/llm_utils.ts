@@ -7,33 +7,18 @@ import {
   SystemMessagePromptTemplate,
   HumanMessagePromptTemplate,
 } from "@langchain/core/prompts";
-import { ChatOpenAI } from "@langchain/openai";
+
 import { ChatGroq } from "@langchain/groq";
 
-type Provider = "OpenAI" | "Groq";
-
 export class LLMUtils {
-  private provider: ChatOpenAI | ChatGroq;
+  private provider: ChatGroq;
 
-  constructor(
-    apiKey: string,
-    modelName: string,
-    maxTokens: number,
-    mode: Provider,
-  ) {
-    if (mode === "OpenAI") {
-      this.provider = new ChatOpenAI({
-        openAIApiKey: apiKey,
-        modelName: modelName,
-        maxTokens: maxTokens,
-      });
-    } else {
-      this.provider = new ChatGroq({
-        apiKey: apiKey,
-        modelName: modelName,
-        maxTokens: maxTokens,
-      });
-    }
+  constructor(apiKey: string, modelName: string, maxTokens: number) {
+    this.provider = new ChatGroq({
+      apiKey: apiKey,
+      modelName: modelName,
+      maxTokens: maxTokens,
+    });
   }
 
   async chatCompletion(

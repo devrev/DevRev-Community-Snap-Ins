@@ -84,6 +84,7 @@ async function handleEvent(event: any) {
         applies_to_part: part_id,
         owned_by: [dev_user_id],
         title: title,
+        body: body,
       });
 
       work_id = work_response.data.work.id;

@@ -11,6 +11,11 @@ There is also a command to generate AI insights from the synced data. The insigh
   2. Analyze the logs to identify root causes, error messages, and potential solutions.
   3. AI agent posts a comment on the associated DevRev issue summarizing the analysis and suggesting troubleshooting steps.
 
+### Concept Mapping:
+1. CircleCI Project - DevRev Part
+2. CircleCI Workflow - DevRev Issue (Each run of the workflow creates a timeline event)
+3. CircleCI Job - DevRev Task
+
 To run the command : 
 ```
 /generateInsights pipeline_id command_type
