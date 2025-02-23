@@ -1,11 +1,11 @@
-version: 2
+version: "2"
 
 name: CircleCI snap-in
 description: A snap-in to connect CircleCI to DevRev and provide AI insights.
 
 
 service_account:
-  display_name: CircleCI Sync Bot
+  display_name: "CircleCI Sync Bot"
 
 
 keyrings:
@@ -30,14 +30,16 @@ keyrings:
 
 
 inputs:
-organization:
-  - name: project_slug
-    description: The project slug that identifies the project in CircleCI.
-    type: string
-    required: true
-    default_value: don:core:dvrv-us-1:devo/XXXX/product:XXXX
-    ui:
-      display_name: CircleCI Project Slug
+  organization:
+    - name: project_slug
+      description: The project slug that identifies the project in CircleCI.
+      field_type: id
+      id_type:
+        - product
+      is_required: true
+      default_value: don:core:dvrv-us-1:devo/XXXXXXX:product/1
+      ui:
+        display_name: Part Picker
 
 
 event_sources:
@@ -46,10 +48,6 @@ event_sources:
       description: Events related to pipeline/workflow/jobs sent on a Webhook connected to CircleCI.
       display_name: CircleCI webhook
       type: flow-custom-webhook
-      setup_instructions: |
-        - For configuration instructions, refer to the [CircleCI documentation](https://circleci.com/docs/webhooks/).
-        - You webhook URL is `{{source.trigger_url}}`.
-        - Your secret is `{{source.config.parameters.secret}}`.
       config:
         policy: |
           package rego
@@ -61,35 +59,36 @@ event_sources:
             "status_code": 400
             }
           }
-
-
-automations:
-  organization:
-    - name: Sync on CircleCI Webhook
-      source: circleci-webhook
-      event_types:
-        - "custom:circleci.pipeline"
-      function: sync_circleci_data
-      
-
-commands:
-  - name: generateInsights
-    namespace: circleci
-    description: Generate insights and recommendations based on CircleCI data.
-    surfaces:
-      - surface: discussions
-        object_types:
-          - issue
-          - ticket
-          - part
-          - conversation
-    usage_hint: "[pipeline_id] [insight_type]"
-    function: generate_insights
+        parameters:
+          secret: 6aVqEymevGZvkiUk30oWccVLEKNOqkcP
+      setup_instructions: "For configuration instructions, refer to the [CircleCI documentation](https://circleci.com/docs/webhooks/). \n\nURL: `{{ source.trigger_url  }}` \n\nSecret: `{{source.config.parameters.secret}}`"
 
 
 functions:
-  - name: generate_insights
-    description: Generate insights based on data pulled from CircleCI. The insights could be one of :- issue_creation OR build_failure_analysis.
-    
+# - name: generate_insights
+#   description: Generate insights based on data pulled from CircleCI. The insights could be one of :- issue_creation OR build_failure_analysis.
+
   - name: sync_circleci_data
     description: Sync CircleCI data to DevRev.
+
+automations:
+  - name: sync-circleci-webhook
+    source: circleci-webhook
+    event_types:
+      - custom:circleci.pipeline
+    function: sync_circleci_data
+      
+
+# commands:
+#   - name: generateInsights
+#     namespace: circleci
+#     description: Generate insights and recommendations based on CircleCI data.
+#     surfaces:
+#       - surface: discussions
+#         object_types:
+#           - issue
+#           - ticket
+#           - part
+#           - conversation
+#     usage_hint: "[pipeline_id] [insight_type]"
+#     function: generate_insights

@@ -38,3 +38,5 @@ before-run-data.json
 node_modules/
 .env
 
+*/dist/*
+*.tar.gz
