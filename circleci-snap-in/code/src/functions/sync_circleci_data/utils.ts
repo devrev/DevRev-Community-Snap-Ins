@@ -72,10 +72,30 @@ export class ApiUtils {
     }
   }
 
+  async getWorks(owned_by: string): Promise<HTTPResponse> {
+    try {
+      const response: AxiosResponse = await this.devrevSdk.worksList({
+        owned_by: [owned_by],
+      });
+      return {
+        data: response.data,
+        message: "Work fetched successfully",
+        success: true,
+      };
+    } catch (error: any) {
+      if (error.response) {
+        const err = `Failed to fetch work. Err: ${JSON.stringify(error.response.data)}, Status: ${
+          error.response.status
+        }`;
+        return { ...defaultResponse, message: err };
+      } else {
+        return { ...defaultResponse, message: error.message };
+      }
+    }
+  }
+
   // Create an Issue/Task
-  async createIssueOrTask(
-    payload: betaSDK.WorksCreateRequest,
-  ): Promise<HTTPResponse> {
+  async createWork(payload: betaSDK.WorksCreateRequest): Promise<HTTPResponse> {
     try {
       const response: AxiosResponse = await this.devrevSdk.worksCreate(payload);
       return {
@@ -95,10 +115,30 @@ export class ApiUtils {
     }
   }
 
+  async getParts(owned_by: string): Promise<HTTPResponse> {
+    try {
+      const response: AxiosResponse = await this.devrevSdk.partsList({
+        owned_by: [owned_by],
+      });
+      return {
+        data: response.data,
+        message: "Parts fetched successfully",
+        success: true,
+      };
+    } catch (error: any) {
+      if (error.response) {
+        const err = `Failed to fetch parts. Err: ${JSON.stringify(error.response.data)}, Status: ${
+          error.response.status
+        }`;
+        return { ...defaultResponse, message: err };
+      } else {
+        return { ...defaultResponse, message: error.message };
+      }
+    }
+  }
+
   // TODO: handle the scenario where part is already created
-  async createPart(
-    payload: betaSDK.PartsCreateRequest,
-  ): Promise<HTTPResponse> {
+  async createPart(payload: betaSDK.PartsCreateRequest): Promise<HTTPResponse> {
     try {
       const response: AxiosResponse = await this.devrevSdk.partsCreate(payload);
       return {
