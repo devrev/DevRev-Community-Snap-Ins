@@ -1,0 +1,44 @@
+# For reference: https://docs.devrev.ai/snap-ins/references/manifest.
+# Refactor the code based on your business logic.
+
+version: "2"
+name: "Github Actions"
+description: "Helps query Github Actions API using commands and natural language."
+
+# This is the name displayed in DevRev where the Snap-In takes actions using the token of this service account.
+service_account:
+  display_name: Github Actions Bot
+
+# Add any external connection, reference: https://docs.devrev.ai/snap-ins/concepts#connection.
+
+# Add organization level inputs, reference: https://docs.devrev.ai/snap-ins/references/inputs.
+keyrings:
+  organization:
+    - name: github_api_key
+      description: GitHub Personal Access Token for API access. Generate one at https://github.com/settings/tokens
+      types:
+        - snap_in_secret
+      display_name: GitHub API Key
+
+    - name: openai_api_key
+      description: OpenAI API Key for summarizing the response.
+      types:
+        - snap_in_secret
+      display_name: OpenAI API Key
+
+# Functions reference: https://docs.devrev.ai/snap-ins/references/functions.
+functions:
+  - name: workflow
+    description: Function containing logic to hit the Github Actions API for workflow.
+
+commands:
+  - name: workflow
+    namespace: GithubActions
+    description: List workflows for facebook/react repository
+    surfaces:
+      - surface: discussions
+        object_types:
+          - issue
+    function: workflow
+
+  
