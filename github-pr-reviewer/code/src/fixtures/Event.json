@@ -1,0 +1,49 @@
+{
+  "payload": {
+    "payload": [
+      "MASKED_PAYLOAD_STRING"
+    ]
+  },
+  "context": {
+    "dev_oid": "MASKED_OID",
+    "automation_id": "MASKED_AUTOMATION_ID",
+    "source_id": "MASKED_SOURCE_ID",
+    "snap_in_id": "MASKED_SNAP_IN_ID",
+    "snap_in_version_id": "MASKED_VERSION_ID",
+    "service_account_id": "MASKED_SERVICE_ACCOUNT_ID",
+    "secrets": {
+      "service_account_token": "MASKED_TOKEN"
+    },
+    "user_id": "MASKED_USER_ID",
+    "event_id": "MASKED_EVENT_ID",
+    "execution_id": "MASKED_EXECUTION_ID",
+    "attempt_number": 1
+  },
+  "execution_metadata": {
+    "request_id": "",
+    "function_name": "on_pr_creation",
+    "event_type": "custom:github-event",
+    "devrev_endpoint": "MASKED_ENDPOINT"
+  },
+  "input_data": {
+    "global_values": {},
+    "event_sources": {
+      "github-app-source": "MASKED_SOURCE_ID"
+    },
+    "keyrings": { 
+      "github": "MASKED_GITHUB_TOKEN" 
+    },
+    "resources": {
+      "keyrings": {
+        "github": {
+          "external_org_id": "MASKED_ORG_ID",
+          "external_org_name": "MASKED_ORG_NAME",
+          "id": "MASKED_KEYRING_ID",
+          "secret": "MASKED_SECRET",
+          "type_id": "devrev-github-oauth"
+        }
+      },
+      "tags": {}
+    }
+  }
+}
