@@ -1,0 +1,103 @@
+{
+    "triggerEvent": "BOOKING_CANCELLED",
+    "createdAt": "2025-02-19T19:40:40.768Z",
+    "payload": {
+        "bookerUrl": "https://cal.com",
+        "title": "Let's do something together between Pratik Sharma and Pratik Sharma",
+        "length": 30,
+        "type": "30min",
+        "customInputs": {},
+        "eventTypeId": 142574,
+        "userFieldsResponses": {},
+        "responses": {
+            "name": {
+                "label": "your_name",
+                "value": "Pratik Sharma",
+                "isHidden": false
+            },
+            "email": {
+                "label": "email_address",
+                "value": "pratik@coolhead.in",
+                "isHidden": false
+            },
+            "location": {
+                "label": "location",
+                "value": {
+                    "optionValue": "",
+                    "value": "integrations:daily"
+                },
+                "isHidden": false
+            },
+            "title": {
+                "label": "what_is_this_meeting_about",
+                "isHidden": true
+            },
+            "notes": {
+                "label": "additional_notes",
+                "isHidden": false
+            },
+            "guests": {
+                "label": "additional_guests",
+                "value": [],
+                "isHidden": false
+            },
+            "rescheduleReason": {
+                "label": "reason_for_reschedule",
+                "isHidden": false
+            }
+        },
+        "startTime": "2025-02-21T08:30:00+00:00",
+        "endTime": "2025-02-21T09:00:00+00:00",
+        "organizer": {
+            "id": 44031,
+            "username": "biomathcode",
+            "email": "sharma.pratik2016@gmail.com",
+            "name": "Pratik Sharma",
+            "timeZone": "Asia/Kolkata",
+            "timeFormat": "h:mma",
+            "language": {
+                "locale": "en"
+            },
+            "utcOffset": 330
+        },
+        "attendees": [
+            {
+                "name": "Pratik Sharma",
+                "email": "pratik@coolhead.in",
+                "timeZone": "Asia/Calcutta",
+                "phoneNumber": null,
+                "language": {
+                    "locale": "en"
+                },
+                "utcOffset": 330
+            }
+        ],
+        "uid": "5iA4JzfDYBRBVi5tfeCHgt",
+        "bookingId": 5991038,
+        "location": "integrations:daily",
+        "destinationCalendar": [
+            {
+                "id": 31996,
+                "integration": "google_calendar",
+                "externalId": "sharma.pratik2016@gmail.com",
+                "primaryEmail": null,
+                "userId": 44031,
+                "eventTypeId": null,
+                "credentialId": 55958,
+                "domainWideDelegationCredentialId": null
+            }
+        ],
+        "cancellationReason": "adf",
+        "seatsPerTimeSlot": null,
+        "seatsShowAttendees": null,
+        "iCalUID": "5iA4JzfDYBRBVi5tfeCHgt@Cal.com",
+        "iCalSequence": 1,
+        "eventTitle": "Let's do something together",
+        "eventDescription": null,
+        "requiresConfirmation": null,
+        "price": null,
+        "currency": "usd",
+        "status": "CANCELLED",
+        "cancelledBy": "sharma.pratik2016@gmail.com"
+    }
+}

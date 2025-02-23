@@ -1,0 +1,124 @@
+/*
+ * Copyright (c) 2023 DevRev, Inc. All rights reserved.
+ */
+// Schedule call
+// Reschedule call
+// finally that the call has been cancelled
+
+// get the slot for today, tomorrow, and after-tomorrow
+
+import { client } from '@devrev/typescript-sdk';
+import {
+  TimelineCommentBodyType,
+  TimelineEntriesUpdateRequestType,
+} from '@devrev/typescript-sdk/dist/auto-generated/public-devrev-sdk';
+
+import { RESCHEDULESNAPBODY, SCHEDULESNAPBODY, views } from '../common/constants';
+
+export const run = async (events: any[]) => {
+  console.log('Logging input events in render widget');
+  for (const event of events) {
+    console.log(event);
+  }
+
+  const event = events[0];
+
+  const action = event.payload.action.id;
+
+  const devrevPAT = event.context.secrets.service_account_token;
+  const API_BASE = event.execution_metadata.devrev_endpoint;
+  // Setting up the DevRev SDK client
+  const devrevSDK = client.setup({
+    endpoint: API_BASE,
+    token: devrevPAT,
+  });
+
+  console.log('Current action: ', action);
+
+  const isBooking = action.split('_')[0] === 'booking';
+
+  if (isBooking) {
+    // return the schedule snap body
+    const updateTimelineEntryOnAction = await devrevSDK.timelineEntriesUpdate({
+      body: event.payload.parameters,
+      body_type: TimelineCommentBodyType.SnapKit,
+      id: event.payload.context.entry_id,
+      snap_kit_body: {
+        body: {
+          snaps: SCHEDULESNAPBODY,
+        },
+        snap_in_action_name: 'cal_widget',
+        snap_in_id: event.context.snap_in_id,
+      },
+      type: TimelineEntriesUpdateRequestType.TimelineComment,
+    });
+
+    return updateTimelineEntryOnAction;
+  }
+
+  if (action === views.SCHEDULE) {
+    const updateTimelineEntryOnAction = await devrevSDK.timelineEntriesUpdate({
+      body: event.payload.parameters,
+      body_type: TimelineCommentBodyType.SnapKit,
+      id: event.payload.context.entry_id,
+      snap_kit_body: {
+        body: {
+          snaps: SCHEDULESNAPBODY,
+        },
+        snap_in_action_name: 'cal_widget',
+        snap_in_id: event.context.snap_in_id,
+      },
+      type: TimelineEntriesUpdateRequestType.TimelineComment,
+    });
+
+    return updateTimelineEntryOnAction;
+    // return the reschedule snap body again
+  }
+
+  if (action === views.RESCHEDULE) {
+    // return the schedule snap body again
+    const updateTimelineEntryOnAction = await devrevSDK.timelineEntriesUpdate({
+      body: event.payload.parameters,
+      body_type: TimelineCommentBodyType.SnapKit,
+      id: event.payload.context.entry_id,
+      snap_kit_body: {
+        body: {
+          snaps: RESCHEDULESNAPBODY,
+        },
+        snap_in_action_name: 'cal_widget',
+        snap_in_id: event.context.snap_in_id,
+      },
+      type: TimelineEntriesUpdateRequestType.TimelineComment,
+    });
+
+    return updateTimelineEntryOnAction;
+  }
+
+  const updateTimelineEntryOnAction = await devrevSDK.timelineEntriesUpdate({
+    body: event.payload.parameters,
+    body_type: TimelineCommentBodyType.SnapKit,
+    id: event.payload.context.entry_id,
+    snap_kit_body: {
+      body: {
+        snaps: [
+          {
+            elements: [
+              {
+                text: `you clicked the action ${action}`,
+                type: 'plain_text',
+              },
+            ],
+            type: 'content',
+          },
+        ],
+      },
+      snap_in_action_name: 'cal_widget',
+      snap_in_id: event.context.snap_in_id,
+    },
+    type: TimelineEntriesUpdateRequestType.TimelineComment,
+  });
+
+  return updateTimelineEntryOnAction;
+};
+
+export default run;

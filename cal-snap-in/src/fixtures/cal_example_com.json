@@ -1,0 +1,175 @@
+{
+    "payload": {
+        "createdAt": "2025-02-20T10:15:05.547Z",
+        "payload": {
+            "additionalNotes": "This is so great",
+            "appsStatus": [
+                {
+                    "appName": "daily-video",
+                    "errors": [],
+                    "failures": 0,
+                    "success": 1,
+                    "type": "daily_video"
+                },
+                {
+                    "appName": "google-calendar",
+                    "errors": [],
+                    "failures": 0,
+                    "success": 1,
+                    "type": "google_calendar",
+                    "warnings": []
+                }
+            ],
+            "attendees": [
+                {
+                    "email": "pratik@coolhead.in",
+                    "firstName": "",
+                    "language": {
+                        "locale": "en"
+                    },
+                    "lastName": "",
+                    "name": "Chetan Sharma",
+                    "timeZone": "Asia/Calcutta",
+                    "utcOffset": 330
+                }
+            ],
+            "bookerUrl": "https://cal.com",
+            "bookingId": 6002584,
+            "conferenceData": {
+                "createRequest": {
+                    "requestId": "2db644eb-37a5-581a-99fa-ebe6ce513834"
+                }
+            },
+            "currency": "usd",
+            "customInputs": {},
+            "description": "This is so great",
+            "destinationCalendar": [
+                {
+                    "credentialId": 55958,
+                    "domainWideDelegationCredentialId": null,
+                    "eventTypeId": null,
+                    "externalId": "sharma.pratik2016@gmail.com",
+                    "id": 31996,
+                    "integration": "google_calendar",
+                    "primaryEmail": null,
+                    "userId": 44031
+                }
+            ],
+            "endTime": "2025-02-21T07:30:00Z",
+            "eventDescription": "",
+            "eventTitle": "Let's Talk",
+            "eventTypeId": 142572,
+            "hideCalendarEventDetails": false,
+            "hideCalendarNotes": false,
+            "iCalSequence": 0,
+            "iCalUID": "we9GDW1VVgTCR4cRf2GDuS@Cal.com",
+            "length": 15,
+            "location": "integrations:daily",
+            "metadata": {
+                "videoCallUrl": "https://app.cal.com/video/we9GDW1VVgTCR4cRf2GDuS"
+            },
+            "oneTimePassword": null,
+            "organizer": {
+                "email": "sharma.pratik2016@gmail.com",
+                "id": 44031,
+                "language": {
+                    "locale": "en"
+                },
+                "name": "Pratik Sharma",
+                "timeFormat": "h:mma",
+                "timeZone": "Asia/Kolkata",
+                "username": "biomathcode",
+                "utcOffset": 330
+            },
+            "price": 0,
+            "requiresConfirmation": false,
+            "responses": {
+                "email": {
+                    "isHidden": false,
+                    "label": "email_address",
+                    "value": "pratik@coolhead.in"
+                },
+                "guests": {
+                    "isHidden": false,
+                    "label": "additional_guests",
+                    "value": []
+                },
+                "location": {
+                    "isHidden": false,
+                    "label": "location",
+                    "value": {
+                        "optionValue": "",
+                        "value": "integrations:daily"
+                    }
+                },
+                "name": {
+                    "isHidden": false,
+                    "label": "your_name",
+                    "value": "Chetan Sharma"
+                },
+                "notes": {
+                    "isHidden": false,
+                    "label": "additional_notes",
+                    "value": "This is so great"
+                },
+                "rescheduleReason": {
+                    "isHidden": false,
+                    "label": "reason_for_reschedule"
+                },
+                "title": {
+                    "isHidden": true,
+                    "label": "what_is_this_meeting_about"
+                }
+            },
+            "schedulingType": null,
+            "seatsPerTimeSlot": null,
+            "seatsShowAttendees": true,
+            "seatsShowAvailabilityCount": true,
+            "startTime": "2025-02-21T07:15:00Z",
+            "status": "ACCEPTED",
+            "title": "Let's Talk between Pratik Sharma and Chetan Sharma",
+            "type": "15min",
+            "uid": "we9GDW1VVgTCR4cRf2GDuS",
+            "userFieldsResponses": {},
+            "videoCallData": {
+                "id": "LJbFMECXMHkyfOMBMgH8",
+                "password": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyIjoiTEpiRk1FQ1hNSGt5Zk9NQk1nSDgiLCJleHAiOjE3NDEzMzI2MDAsIm8iOnRydWUsImVydWkiOmZhbHNlLCJkIjoiYmJkOThhNzEtMTljOS00YmIxLWE1YzUtY2FmMWVjNWJkMTA1IiwiaWF0IjoxNzQwMDQ2NTA0fQ.bXEKGvk0YYPoOYFdqkzZRqVDoZEs4QYkfNXdoRywx5g",
+                "type": "daily_video",
+                "url": "https://meetco.daily.co/LJbFMECXMHkyfOMBMgH8"
+            }
+        },
+        "triggerEvent": "BOOKING_CREATED"
+    },
+    "context": {
+        "dev_oid": "don:identity:dvrv-us-1:devo/13GRGt258",
+        "automation_id": "don:integration:dvrv-us-1:devo/13GRGt258:automation/8756c01e-8c70-4749-bd1c-eb8b2cf36508",
+        "source_id": "don:integration:dvrv-us-1:devo/13GRGt258:automation/8756c01e-8c70-4749-bd1c-eb8b2cf36508",
+        "snap_in_id": "don:integration:dvrv-us-1:devo/13GRGt258:snap_in/6a528be5-f669-4ece-8cb6-1b4b15be5b3d",
+        "snap_in_version_id": "don:integration:dvrv-us-1:devo/13GRGt258:snap_in_package/2312ba32-0835-47d9-bbe6-61b67128c3d3:snap_in_version/34172b8a-5d32-4fe1-baf1-00b87f3ec472",
+        "service_account_id": "don:identity:dvrv-us-1:devo/13GRGt258:svcacc/26",
+        "secrets": {
+            "service_account_token": "eyJhbGciOiJSUzI1NiIsImlzcyI6Imh0dHBzOi8vYXV0aC10b2tlbi5kZXZyZXYuYWkvIiwia2lkIjoic3RzX2tpZF9yc2EiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOlsiamFudXMiXSwiYXpwIjoiZG9uOmlkZW50aXR5OmR2cnYtdXMtMTpkZXZvLzEzR1JHdDI1ODpzeXN1LzEiLCJleHAiOjE3NDAwNTM3MDYsImh0dHA6Ly9kZXZyZXYuYWkvYWF0X2FsbG93X2xpc3RlZCI6dHJ1ZSwiaHR0cDovL2RldnJldi5haS9jbGllbnRpZCI6ImRvbjppZGVudGl0eTpkdnJ2LXVzLTE6ZGV2by8xM0dSR3QyNTg6c3ZjYWNjLzI2IiwiaHR0cDovL2RldnJldi5haS9kZXZvX2RvbiI6ImRvbjppZGVudGl0eTpkdnJ2LXVzLTE6ZGV2by8xM0dSR3QyNTgiLCJodHRwOi8vZGV2cmV2LmFpL2Rldm9pZCI6IkRFVi0xM0dSR3QyNTgiLCJodHRwOi8vZGV2cmV2LmFpL3N2Y2FjYyI6ImRvbjppZGVudGl0eTpkdnJ2LXVzLTE6ZGV2by8xM0dSR3QyNTg6c3ZjYWNjLzI2IiwiaHR0cDovL2RldnJldi5haS90b2tlbnR5cGUiOiJ1cm46ZGV2cmV2OnBhcmFtczpvYXV0aDp0b2tlbi10eXBlOmFhdCIsImlhdCI6MTc0MDA0NjUwNiwiaXNzIjoiaHR0cHM6Ly9hdXRoLXRva2VuLmRldnJldi5haS8iLCJqdGkiOiJkb246aWRlbnRpdHk6ZHZydi11cy0xOmRldm8vMTNHUkd0MjU4OnRva2VuL2c2ek11ZExwIiwic3ViIjoiZG9uOmlkZW50aXR5OmR2cnYtdXMtMTpkZXZvLzEzR1JHdDI1ODpzdmNhY2MvMjYifQ.3hHoJhY1sKLrQR9SYW418EPKPJjT7kGFotK7mCM6GEnPAl6s42TSPEuC9wz8o2g77BpJhDpNmwQPDACRahvqOIdoqdfS-Y1Kd9p5osfm3uBN_3F6WKOL-EcrV_4AXqkFqiE8mwIO82PjuWyKWzdDFYM_ZchK96uh0FV_T-FXpT0maSn--fyTuKVKBADMc-vGJiMsnMgEE2kZQ7x_LQpwdAl1iGfJCsKt_jk1sEu3Zg0EZpLgkApQzrLQZG5HWmRPX58_W32PtNUKMxh7djYPCfLn3H79KhOVWLsCK2w91vPeqd56OArBcp_vji8L6f0-Mve9ZVCdYqAswIC93pDPqA"
+        },
+        "user_id": "don:identity:dvrv-us-1:devo/13GRGt258:svcacc/26",
+        "event_id": "573067939",
+        "execution_id": "5a9c0ff0-c7eb-4579-8f22-3f0383ca9dd6",
+        "attempt_number": 1
+    },
+    "execution_metadata": {
+        "request_id": "",
+        "function_name": "cal_handler",
+        "event_type": "custom:cal-event",
+        "devrev_endpoint": "https://api.devrev.ai"
+    },
+    "input_data": {
+        "global_values": {},
+        "event_sources": {
+            "cal-app-source": "don:integration:dvrv-us-1:devo/13GRGt258:event_source/f45c7896-422b-4490-9788-fa57e5493443"
+        },
+        "keyrings": null,
+        "resources": {
+            "keyrings": {},
+            "tags": {}
+        }
+    }
+}
