@@ -44,7 +44,6 @@ export const startServer = (port: number) => {
 // handle async requests
 app.post("/handle/async", async (req: Request, resp: Response) => {
   const events = req.body;
-  console.log(`[server]: Received events: ${JSON.stringify(events)}`);
   if (events === undefined) {
     resp.status(400).send("Invalid request format: body is undefined");
     return;
@@ -54,7 +53,6 @@ app.post("/handle/async", async (req: Request, resp: Response) => {
 });
 
 app.post("/handle/sync", async (req: Request, resp: Response) => {
-  console.log(`[server]: Received request: ${JSON.stringify(req.body)}`);
   if (req.body === undefined) {
     resp.status(400).send("Invalid request format: body is undefined");
     return;

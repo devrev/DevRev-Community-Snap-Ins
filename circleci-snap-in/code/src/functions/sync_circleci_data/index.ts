@@ -12,11 +12,13 @@ import {
 type CircleCIWebhook = WorkflowCompletedWebhook | JobCompletedWebhook;
 
 async function handleEvent(event: any) {
+  console.debug("[server] Handling event with payload ID: ", event.payload.id);
   const token = event.context.secrets["service_account_token"];
   const endpoint = event.execution_metadata.devrev_endpoint;
   const dev = event.context.dev_oid;
 
   const apiUtils = new ApiUtils(endpoint, token);
+  console.debug("[server] Created ApiUtils instance");
   // parse the event payload as CircleCIWebhook
   const payload: CircleCIWebhook = event.payload;
   const project_slug = payload.project.slug;
@@ -27,8 +29,8 @@ async function handleEvent(event: any) {
     name: project_slug,
     owned_by: dev,
   });
-
   const part_id = part.data.id;
+  console.debug("[server] Created part for project: ", part_id);
   let type;
   let title;
 
@@ -51,6 +53,7 @@ async function handleEvent(event: any) {
     owned_by: dev,
     title: title,
   });
+  console.debug("[server] Created work: ", response.data.id);
 
   return response;
 }
