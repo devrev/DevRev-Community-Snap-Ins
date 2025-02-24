@@ -23,6 +23,9 @@ To run the command :
 2. CircleCI Project Slug
 3. Configuration of CircleCI Outbound Webhook [refer here](https://circleci.com/docs/webhooks/)
 
+## Demo Working Video
+[Youtube](https://youtu.be/67SvpOmIiqU)
+
 ## Testing locally
 
 Test the code by adding test events under `src/fixtures` similar to the example event provided. You can add [keyring](https://docs.devrev.ai/snap-ins/references/keyrings) values to the event payload to test API calls as well.
