@@ -1,0 +1,94 @@
+{
+    "snap_in_version": {
+        "automations": [
+            {
+                "event_source": "github-app-source",
+                "event_types": [
+                    "custom:github-event"
+                ],
+                "function": "github_handler",
+                "name": "github-commit-tracker"
+            }
+        ],
+        "created_by": {
+            "type": "dev_user",
+            "display_handle": "pratik",
+            "display_id": "DEVU-1",
+            "display_name": "pratik",
+            "email": "pratik@coolhead.in",
+            "full_name": "Pratik",
+            "id": "don:identity:dvrv-us-1:devo/13GRGt258:devu/1",
+            "id_v1": "don:DEV-13GRGt258:dev_user:DEVU-1",
+            "state": "active",
+            "thumbnail": "https://api.devrev.ai/internal/display-picture/Pratik.png"
+        },
+        "created_date": "2025-02-18T18:37:43.561Z",
+        "description": "Reflects commits that happen on GitHub in DevRev by posting to timeline of a product part.",
+        "display_id": "snap_in_version-a140d599-02e0-4511-8522-58440fe651b5",
+        "events": [
+            {
+                "description": "Event coming from Github app.",
+                "name": "github-app-source",
+                "setup_instructions": "Please copy the source URL from here: \n\nURL: `{{ source.trigger_url  }}` \n\nSecret: `{{source.config.parameters.secret}}`.",
+                "source": "dr/custom/webhook",
+                "source_config": {
+                    "parameters": {
+                        "secret": "6aVqEymevGZvkiUk30oWccVLEKNOqkcP"
+                    },
+                    "policy": "package rego\nsignature := crypto.hmac.sha256(base64.decode(input.request.body_raw), input.parameters.secret)\nexpected_header := sprintf(\"sha256=%v\", [signature])\nsignature_header_name:= \"X-Hub-Signature-256\"\nstatus_code = 200 {\n  input.request.headers[signature_header_name] == expected_header\n} else = 401 {\n  true\n}\noutput = {\"event\": body, \"event_key\": event_key} {\n  status_code == 200\n  body := input.request.body\n  event_key := \"github-event\"\n} else = {\"response\": response} {\n  response := {\"status_code\": status_code}\n}\n"
+                }
+            }
+        ],
+        "functions": [
+            {
+                "config": {
+                    "runtime": {
+                        "max_retries": 3,
+                        "min_interval": 60
+                    }
+                },
+                "description": "Function to reflect Github activities on DevRev.",
+                "function_id": {
+                    "display_id": "snap_in_function-c7dc4481-2126-4fd4-a4d1-6e1040e60110",
+                    "id": "don:integration:dvrv-us-1:devo/13GRGt258:snap_in_function/c7dc4481-2126-4fd4-a4d1-6e1040e60110"
+                },
+                "name": "github_handler",
+                "source_type": "http"
+            }
+        ],
+        "global_variables": [
+            "{\"name\":\"part_id\",\"description\":\"The default part on which to post commits.\",\"devrevFieldType\":\"id\",\"devrevIdType\":[\"product\"],\"isRequired\":true,\"defaultValue\":\"don:core:dvrv-us-1:devo/XXXXXXX:product/1\",\"ui\":{\"displayName\":\"The part on which to post commits.\"}}"
+        ],
+        "id": "don:integration:dvrv-us-1:devo/13GRGt258:snap_in_package/f2390663-aa94-4397-a4fa-43d99ba6a8f3:snap_in_version/a140d599-02e0-4511-8522-58440fe651b5",
+        "manifest": "version: \"2\"\n\nname: GitHub Commit Tracker\ndescription: Reflects commits that happen on GitHub in DevRev by posting to timeline of a product part.\n\nservice_account:\n  display_name: \"GitHub-Commit Bot\"\n\ninputs:\n  organization:\n    - name: part_id\n      field_type: id\n      default_value: don:core:dvrv-us-1:devo/XXXXXXX:product/1\n      is_required: true\n      id_type:\n        - product\n      description: The default part on which to post commits.\n      ui:\n        display_name: The part on which to post commits.\n\nevent_sources:\n  organization:\n    - name: github-app-source\n      type: flow-custom-webhook\n      description: Event coming from Github app.\n      config:\n        policy: |\n          package rego\n          signature := crypto.hmac.sha256(base64.decode(input.request.body_raw), input.parameters.secret)\n          expected_header := sprintf(\"sha256=%v\", [signature])\n          signature_header_name:= \"X-Hub-Signature-256\"\n          status_code = 200 {\n            input.request.headers[signature_header_name] == expected_header\n          } else = 401 {\n            true\n          }\n          output = {\"event\": body, \"event_key\": event_key} {\n            status_code == 200\n            body := input.request.body\n            event_key := \"github-event\"\n          } else = {\"response\": response} {\n            response := {\"status_code\": status_code}\n          }\n        parameters:\n          secret: 6aVqEymevGZvkiUk30oWccVLEKNOqkcP\n      setup_instructions: \"Please copy the source URL from here: \\n\\nURL: `{{ source.trigger_url  }}` \\n\\nSecret: `{{source.config.parameters.secret}}`.\"\n      \nfunctions:\n  - name: github_handler\n    description: Function to reflect Github activities on DevRev.\n\nautomations:\n  - name: github-commit-tracker\n    source: github-app-source\n    event_types:\n      - custom:github-event\n    function: github_handler\n",
+        "manifest_version": {
+            "major": 2,
+            "minor": 0,
+            "patch": 0
+        },
+        "modified_by": {
+            "type": "dev_user",
+            "display_handle": "pratik",
+            "display_id": "DEVU-1",
+            "display_name": "pratik",
+            "email": "pratik@coolhead.in",
+            "full_name": "Pratik",
+            "id": "don:identity:dvrv-us-1:devo/13GRGt258:devu/1",
+            "id_v1": "don:DEV-13GRGt258:dev_user:DEVU-1",
+            "state": "active",
+            "thumbnail": "https://api.devrev.ai/internal/display-picture/Pratik.png"
+        },
+        "modified_date": "2025-02-18T18:37:43.561Z",
+        "name": "GitHub Commit Tracker",
+        "service_account": {
+            "description": "Service account for Snap-in GitHub Commit Tracker",
+            "display_name": "GitHub-Commit Bot"
+        },
+        "slug": "github_webhook",
+        "snap_in_package": {
+            "display_id": "snap_in_package-f2390663-aa94-4397-a4fa-43d99ba6a8f3",
+            "id": "don:integration:dvrv-us-1:devo/13GRGt258:snap_in_package/f2390663-aa94-4397-a4fa-43d99ba6a8f3"
+        },
+        "state": "draft"
+    }
+}

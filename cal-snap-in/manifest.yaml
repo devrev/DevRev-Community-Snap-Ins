@@ -1,0 +1,70 @@
+version: "2"
+
+name: Cal.com Integration new version
+description: Reflects meeting from Cal.com in DevRev by sync with Meeting View  .
+
+service_account:
+  display_name: "Cal.com Bot"
+
+inputs:
+  organization:
+    - name: cal_api_key
+      description: Cal API key
+      field_type: text
+      default_value: cal_live_XXXXXXXXXXXXXXXXX
+
+event_sources:
+  organization:
+    - name: cal-app-source
+      type: flow-custom-webhook
+      description: Event coming from Cal app.
+      config: 
+        policy: |
+          package rego 
+          output = {"event": body, "event_key": event_key} {
+            body := input.request.body
+            event_key := "cal-event"
+          } else = {"response": response } {
+            response := {
+            "status_code": 400
+            }
+          }
+      setup_instructions: "Please copy the source URL from here: \n\n URL: `{{ source.trigger_url  }}` \n\n  add the api key in the configure on the right-left corner "
+
+
+functions:
+  - name: cal_handler
+    description: Function to reflect cal activities on DevRev.
+  - name: cal_command_handler
+    description:  Function handles the cal command in DevRev.
+  - name: render_widget
+    description: Function handles the snap-in actions.
+
+
+commands: 
+  - name: cal
+    namespace: devrev 
+    description: Create a new Cal Widget
+    surfaces: 
+      - surface: discussions
+        object_types: 
+          - issue
+          - ticket
+          - part
+          - conversation
+    usage_hint: "text"
+    function: cal_command_handler
+
+snap_kit_actions: 
+  - name: cal_widget
+    description: Snap kit action for showing cal_widget created using `cal` command
+    function: render_widget
+
+
+automations:
+  - name: cal-commit-tracker
+    source: cal-app-source
+    event_types:
+      - custom:cal-event
+    function: cal_handler
+

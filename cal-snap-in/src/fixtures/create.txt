@@ -1,0 +1,14 @@
+curl --request POST \
+  --url https://api.cal.com/v2/bookings \
+  --header 'Authorization: Bearer cal_live_062aaa1387059dd9e1117a64477c9d37' \
+  --header 'Content-Type: application/json' \
+  --header 'cal-api-version: 2024-08-13' \
+  --data '{
+  "start": "2025-02-26T06:30:00Z",
+  "eventTypeId": 142572,
+  "attendee": {
+    "name": "Chetan Sharma",
+    "timeZone": "Asia/Calcutta",
+    "email": "pratik@coolhead.in"
+  }
+}'

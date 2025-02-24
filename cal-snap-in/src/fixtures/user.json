@@ -1,0 +1,71 @@
+{
+    "dev_users": [
+        {
+            "created_by": {
+                "type": "dev_user",
+                "display_id": "DEVU-2",
+                "display_name": "pratik15",
+                "email": "pratik15@zohomail.in",
+                "full_name": "Pratik15",
+                "id": "don:identity:dvrv-us-1:devo/13GRGt258:devu/2",
+                "state": "active"
+            },
+            "created_date": "2025-02-18T17:24:50.364Z",
+            "display_id": "DEVU-2",
+            "display_name": "pratik15",
+            "email": "pratik15@zohomail.in",
+            "full_name": "Pratik15",
+            "id": "don:identity:dvrv-us-1:devo/13GRGt258:devu/2",
+            "modified_by": {
+                "type": "dev_user",
+                "display_id": "DEVU-2",
+                "display_name": "pratik15",
+                "email": "pratik15@zohomail.in",
+                "full_name": "Pratik15",
+                "id": "don:identity:dvrv-us-1:devo/13GRGt258:devu/2",
+                "state": "active"
+            },
+            "modified_date": "2025-02-18T17:25:44.815Z",
+            "state": "active"
+        },
+        {
+            "created_by": {
+                "type": "dev_user",
+                "display_id": "DEVU-1",
+                "display_name": "pratik",
+                "email": "pratik@coolhead.in",
+                "full_name": "Pratik",
+                "id": "don:identity:dvrv-us-1:devo/13GRGt258:devu/1",
+                "state": "active"
+            },
+            "created_date": "2023-11-21T19:04:37.086Z",
+            "display_id": "DEVU-1",
+            "display_name": "pratik",
+            "email": "pratik@coolhead.in",
+            "external_identities": [
+                {
+                    "display_name": "biomathcode",
+                    "id": "29139349",
+                    "is_verified": true,
+                    "issuer": "github"
+                }
+            ],
+            "full_name": "Pratik",
+            "id": "don:identity:dvrv-us-1:devo/13GRGt258:devu/1",
+            "modified_by": {
+                "type": "dev_user",
+                "display_id": "DEVU-1",
+                "display_name": "pratik",
+                "email": "pratik@coolhead.in",
+                "full_name": "Pratik",
+                "id": "don:identity:dvrv-us-1:devo/13GRGt258:devu/1",
+                "state": "active"
+            },
+            "modified_date": "2025-02-17T16:13:18.126Z",
+            "phone_numbers": [
+                "----------"
+            ],
+            "state": "active"
+        }
+    ]
+}

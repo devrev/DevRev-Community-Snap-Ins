@@ -1,0 +1,331 @@
+{
+    "payload": {
+        "action": {
+            "block_id": "NIL",
+            "id": "reschedule",
+            "timestamp": 1740341485,
+            "type": "FORM",
+            "value": {
+                "single_static_select": {
+                    "action_id": "single_static_select",
+                    "type": "static_select",
+                    "value": {
+                        "text": {
+                            "text": "Today",
+                            "type": "plain_text"
+                        },
+                        "value": "today"
+                    }
+                },
+                "slot_select": {
+                    "action_id": "slot_select",
+                    "type": "static_select",
+                    "value": {
+                        "text": {
+                            "text": "12:00",
+                            "type": "plain_text"
+                        },
+                        "value": "12:00"
+                    }
+                },
+                "user_picker": {
+                    "action_id": "user_picker",
+                    "type": "user_picker",
+                    "value": [
+                        "don:identity:dvrv-us-1:devo/13GRGt258:devu/2"
+                    ]
+                }
+            }
+        },
+        "action_id": "don:integration:dvrv-us-1:devo/13GRGt258:snap_in/168335f6-4c68-4bd7-86b8-5570de3a23e2:snap_kit_action/cal_widget",
+        "actor_id": "don:identity:dvrv-us-1:devo/13GRGt258:devu/1",
+        "body": {
+            "snaps": [
+                {
+                    "action_id": "reschedule",
+                    "action_type": "remote",
+                    "alignment": "end",
+                    "direction": "row",
+                    "elements": [
+                        {
+                            "element": {
+                                "action_id": "single_static_select",
+                                "initial_selected_option": {
+                                    "text": {
+                                        "text": "Today",
+                                        "type": "plain_text"
+                                    },
+                                    "value": "today"
+                                },
+                                "options": [
+                                    {
+                                        "text": {
+                                            "text": "Tomorrow",
+                                            "type": "plain_text"
+                                        },
+                                        "value": "tomorrow"
+                                    },
+                                    {
+                                        "text": {
+                                            "text": "Today",
+                                            "type": "plain_text"
+                                        },
+                                        "value": "today"
+                                    },
+                                    {
+                                        "text": {
+                                            "text": "Day After Tomorrow",
+                                            "type": "plain_text"
+                                        },
+                                        "value": "aftertomorrow"
+                                    }
+                                ],
+                                "placeholder": {
+                                    "text": "Placeholder here",
+                                    "type": "plain_text"
+                                },
+                                "type": "static_select"
+                            },
+                            "label": {
+                                "text": "Select Day",
+                                "type": "plain_text"
+                            },
+                            "type": "input_layout"
+                        },
+                        {
+                            "element": {
+                                "action_id": "slot_select",
+                                "initial_selected_option": {
+                                    "text": {
+                                        "text": "12:00",
+                                        "type": "plain_text"
+                                    },
+                                    "value": "12:00"
+                                },
+                                "options": [
+                                    {
+                                        "text": {
+                                            "text": "12:00",
+                                            "type": "plain_text"
+                                        },
+                                        "value": "12:00"
+                                    },
+                                    {
+                                        "text": {
+                                            "text": "12:15",
+                                            "type": "plain_text"
+                                        },
+                                        "value": "12:15"
+                                    },
+                                    {
+                                        "text": {
+                                            "text": "12:30",
+                                            "type": "plain_text"
+                                        },
+                                        "value": "12:30"
+                                    },
+                                    {
+                                        "text": {
+                                            "text": "12:45",
+                                            "type": "plain_text"
+                                        },
+                                        "value": "12:45"
+                                    },
+                                    {
+                                        "text": {
+                                            "text": "13:00",
+                                            "type": "plain_text"
+                                        },
+                                        "value": "13:00"
+                                    },
+                                    {
+                                        "text": {
+                                            "text": "13:15",
+                                            "type": "plain_text"
+                                        },
+                                        "value": "13:15"
+                                    },
+                                    {
+                                        "text": {
+                                            "text": "13:30",
+                                            "type": "plain_text"
+                                        },
+                                        "value": "13:30"
+                                    },
+                                    {
+                                        "text": {
+                                            "text": "13:45",
+                                            "type": "plain_text"
+                                        },
+                                        "value": "13:45"
+                                    },
+                                    {
+                                        "text": {
+                                            "text": "14:00",
+                                            "type": "plain_text"
+                                        },
+                                        "value": "14:00"
+                                    },
+                                    {
+                                        "text": {
+                                            "text": "14:15",
+                                            "type": "plain_text"
+                                        },
+                                        "value": "14:15"
+                                    },
+                                    {
+                                        "text": {
+                                            "text": "14:30",
+                                            "type": "plain_text"
+                                        },
+                                        "value": "14:30"
+                                    },
+                                    {
+                                        "text": {
+                                            "text": "14:45",
+                                            "type": "plain_text"
+                                        },
+                                        "value": "14:45"
+                                    },
+                                    {
+                                        "text": {
+                                            "text": "15:00",
+                                            "type": "plain_text"
+                                        },
+                                        "value": "15:00"
+                                    },
+                                    {
+                                        "text": {
+                                            "text": "15:15",
+                                            "type": "plain_text"
+                                        },
+                                        "value": "15:15"
+                                    },
+                                    {
+                                        "text": {
+                                            "text": "15:30",
+                                            "type": "plain_text"
+                                        },
+                                        "value": "15:30"
+                                    },
+                                    {
+                                        "text": {
+                                            "text": "15:45",
+                                            "type": "plain_text"
+                                        },
+                                        "value": "15:45"
+                                    },
+                                    {
+                                        "text": {
+                                            "text": "16:00",
+                                            "type": "plain_text"
+                                        },
+                                        "value": "16:00"
+                                    },
+                                    {
+                                        "text": {
+                                            "text": "16:15",
+                                            "type": "plain_text"
+                                        },
+                                        "value": "16:15"
+                                    },
+                                    {
+                                        "text": {
+                                            "text": "16:30",
+                                            "type": "plain_text"
+                                        },
+                                        "value": "16:30"
+                                    },
+                                    {
+                                        "text": {
+                                            "text": "16:45",
+                                            "type": "plain_text"
+                                        },
+                                        "value": "16:45"
+                                    }
+                                ],
+                                "placeholder": {
+                                    "text": " Select Slot",
+                                    "type": "plain_text"
+                                },
+                                "type": "static_select"
+                            },
+                            "label": {
+                                "text": "Select Slot",
+                                "type": "plain_text"
+                            },
+                            "type": "input_layout"
+                        },
+                        {
+                            "element": {
+                                "action_id": "user_picker",
+                                "max_selected_items": 1,
+                                "type": "user_picker",
+                                "user_types": [
+                                    "dev_user"
+                                ]
+                            },
+                            "label": {
+                                "text": "User",
+                                "type": "plain_text"
+                            },
+                            "type": "input_layout"
+                        }
+                    ],
+                    "justify": "between",
+                    "submit_action": {
+                        "action_id": "submit",
+                        "style": "primary",
+                        "text": {
+                            "text": "Schedule",
+                            "type": "plain_text"
+                        },
+                        "type": "button",
+                        "value": "submit"
+                    },
+                    "type": "form"
+                }
+            ]
+        },
+        "context": {
+            "entry_id": "don:core:dvrv-us-1:devo/13GRGt258:ticket/9:comment/osryefmciedto",
+            "parent_core_object_id": "don:core:dvrv-us-1:devo/13GRGt258:ticket/9"
+        },
+        "dev_org": "don:identity:dvrv-us-1:devo/13GRGt258",
+        "parent_id": "don:integration:dvrv-us-1:devo/13GRGt258:snap_in/168335f6-4c68-4bd7-86b8-5570de3a23e2",
+        "request_id": ""
+    },
+    "context": {
+        "dev_oid": "don:identity:dvrv-us-1:devo/13GRGt258",
+        "automation_id": "",
+        "source_id": "don:integration:dvrv-us-1:devo/13GRGt258:snap_in/168335f6-4c68-4bd7-86b8-5570de3a23e2:snap_kit_action/cal_widget",
+        "snap_in_id": "don:integration:dvrv-us-1:devo/13GRGt258:snap_in/168335f6-4c68-4bd7-86b8-5570de3a23e2",
+        "snap_in_version_id": "don:integration:dvrv-us-1:devo/13GRGt258:snap_in_package/2312ba32-0835-47d9-bbe6-61b67128c3d3:snap_in_version/54a15385-3a6b-4121-8d38-85bf4f6e89f4",
+        "service_account_id": "don:identity:dvrv-us-1:devo/13GRGt258:svcacc/49",
+        "secrets": {
+            "actor_session_token": "eyJhbGciOiJSUzI1NiIsImlzcyI6Imh0dHBzOi8vYXV0aC10b2tlbi5kZXZyZXYuYWkvIiwia2lkIjoic3RzX2tpZF9yc2EiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOlsiamFudXMiXSwiYXpwIjoiZTU5YjdmYTgtMWU1Ni00NzdkLWJiYTYtZmM5YjhmYzkzZTZkIiwiZXhwIjoxNzQwMzQxNzg1LCJodHRwOi8vZGV2cmV2LmFpL2F1dGgwX3VpZCI6ImRvbjppZGVudGl0eTpkdnJ2LXVzLTE6ZGV2by9zdXBlcjphdXRoMF91c2VyL29pZGN8cGFzc3dvcmRsZXNzfGVtYWlsfDY1NWNmZWVjYWRkZjZhODdmZTY0NGEzYyIsImh0dHA6Ly9kZXZyZXYuYWkvYXV0aDBfdXNlcl9pZCI6Im9pZGN8cGFzc3dvcmRsZXNzfGVtYWlsfDY1NWNmZWVjYWRkZjZhODdmZTY0NGEzYyIsImh0dHA6Ly9kZXZyZXYuYWkvZGV2b19kb24iOiJkb246aWRlbnRpdHk6ZHZydi11cy0xOmRldm8vMTNHUkd0MjU4IiwiaHR0cDovL2RldnJldi5haS9kZXZvaWQiOiJERVYtMTNHUkd0MjU4IiwiaHR0cDovL2RldnJldi5haS9kZXZ1aWQiOiJERVZVLTEiLCJodHRwOi8vZGV2cmV2LmFpL2VtYWlsIjoicHJhdGlrQGNvb2xoZWFkLmluIiwiaHR0cDovL2RldnJldi5haS9pc192ZXJpZmllZCI6dHJ1ZSwiaHR0cDovL2RldnJldi5haS90b2tlbnR5cGUiOiJ1cm46ZGV2cmV2OnBhcmFtczpvYXV0aDp0b2tlbi10eXBlOnNlc3Npb246ZGV2IiwiaWF0IjoxNzQwMzQxNDg1LCJpc3MiOiJodHRwczovL2F1dGgtdG9rZW4uZGV2cmV2LmFpLyIsImp0aSI6ImRvbjppZGVudGl0eTpkdnJ2LXVzLTE6ZGV2by8xM0dSR3QyNTg6dG9rZW4vaTlkR0RnN1p8MDAxIiwib3JnX2lkIjoib3JnX1VwU3V3YkJlc3VmNVNIOVMiLCJzdWIiOiJvaWRjfHBhc3N3b3JkbGVzc3xlbWFpbHw2NTVjZmVlY2FkZGY2YTg3ZmU2NDRhM2MifQ.rET0QhWdwfLki9sojIn6ebEpNIRtXwoxUsEP0qaWLuVaqd5Sos5IFJy04s3Lj0CRQyK-91m8B829W9PQ62wWrCkFrjS6MBJScGPIhvlD1yseFbk0bdaq38CLZL6fRvw3RXgGdm1s14lffM07VU-h3kX3KcGQYJwM9F1-7XzQLdBknDxB9Vy7L8eADbMRxfXHCBRneSNxqE6i1kCkIGTL_X8bTASOak929VDKjPvNQbtdXP-tQAYSUOflM9vwbzdfZj6OuhhlI3Zp4CRQiMH4_UpJC0-p3DK-mxwYneH_W1tmSfaB1snaGVez3S13Yp0wK_r5VxbJOHW7BXmvr8gbxA",
+            "service_account_token": "eyJhbGciOiJSUzI1NiIsImlzcyI6Imh0dHBzOi8vYXV0aC10b2tlbi5kZXZyZXYuYWkvIiwia2lkIjoic3RzX2tpZF9yc2EiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOlsiamFudXMiXSwiYXpwIjoiZG9uOmlkZW50aXR5OmR2cnYtdXMtMTpkZXZvLzEzR1JHdDI1ODpzeXN1LzEiLCJleHAiOjE3NDAzNDg2ODUsImh0dHA6Ly9kZXZyZXYuYWkvYWF0X2FsbG93X2xpc3RlZCI6dHJ1ZSwiaHR0cDovL2RldnJldi5haS9jbGllbnRpZCI6ImRvbjppZGVudGl0eTpkdnJ2LXVzLTE6ZGV2by8xM0dSR3QyNTg6c3ZjYWNjLzQ5IiwiaHR0cDovL2RldnJldi5haS9kZXZvX2RvbiI6ImRvbjppZGVudGl0eTpkdnJ2LXVzLTE6ZGV2by8xM0dSR3QyNTgiLCJodHRwOi8vZGV2cmV2LmFpL2Rldm9pZCI6IkRFVi0xM0dSR3QyNTgiLCJodHRwOi8vZGV2cmV2LmFpL3N2Y2FjYyI6ImRvbjppZGVudGl0eTpkdnJ2LXVzLTE6ZGV2by8xM0dSR3QyNTg6c3ZjYWNjLzQ5IiwiaHR0cDovL2RldnJldi5haS90b2tlbnR5cGUiOiJ1cm46ZGV2cmV2OnBhcmFtczpvYXV0aDp0b2tlbi10eXBlOmFhdCIsImlhdCI6MTc0MDM0MTQ4NSwiaXNzIjoiaHR0cHM6Ly9hdXRoLXRva2VuLmRldnJldi5haS8iLCJqdGkiOiJkb246aWRlbnRpdHk6ZHZydi11cy0xOmRldm8vMTNHUkd0MjU4OnRva2VuL0F6SHlHQkdRIiwic3ViIjoiZG9uOmlkZW50aXR5OmR2cnYtdXMtMTpkZXZvLzEzR1JHdDI1ODpzdmNhY2MvNDkifQ.bt6hJ3FM2Ff1lGpEP59qsA25R2cvtFUy8B_nd4OTKOcYJ7gk_facFkNxZD207flHiTjPVesFIsFoHQpfgFWsYar9rv3JHzhqxtGsoTssvU5ooH_ivmCdpFTJb5LnZmrBe58gcrijYNRWXXSTbrU4hfDP-C5kwzKIHHnbEx4EuRaoU-P5vG7J3ZxP8qgbeul5PRcoU4hbdm0jE47CYui_3qXtRIf5dG7HPftCY-oDJSG33fdrn6YWOZM-YFlGDCzwRD6oNwsVL9Ey8lJxKYRwCKg4kCqcc8nZnXqmRtUyXBzEhFLCuKglmY1GlyuzFyl3_sU6MR_TPSAWF7TQPCL3CQ"
+        },
+        "user_id": "don:identity:dvrv-us-1:devo/13GRGt258:devu/1",
+        "event_id": "",
+        "execution_id": ""
+    },
+    "execution_metadata": {
+        "request_id": "",
+        "function_name": "render_widget",
+        "devrev_endpoint": "https://api.devrev.ai"
+    },
+    "input_data": {
+        "global_values": {
+            "cal_api_key": "cal_live_062aaa1387059dd9e1117a64477c9d37"
+        },
+        "event_sources": {
+            "cal-app-source": "don:integration:dvrv-us-1:devo/13GRGt258:event_source/e4741626-5f20-417a-99db-cc55671796e5"
+        },
+        "keyrings": null,
+        "resources": {
+            "keyrings": {},
+            "tags": {}
+        }
+    }
+}

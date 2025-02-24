@@ -1,0 +1,45 @@
+{
+    "payload": {
+        "actor_id": "don:identity:dvrv-us-1:devo/13GRGt258:devu/1",
+        "command_id": "don:integration:dvrv-us-1:devo/13GRGt258:namespace/devrev:command/cal",
+        "dev_org": "don:identity:dvrv-us-1:devo/13GRGt258",
+        "parameters": "this is the payload that i want to send",
+        "parent_id": "don:integration:dvrv-us-1:devo/13GRGt258:snap_in/04ac4ada-c104-457d-93f2-1bd5628c60df",
+        "request_id": "QECmEiUEnmMCv-6jnSraPg",
+        "source_id": "don:core:dvrv-us-1:devo/13GRGt258:ticket/10",
+        "surface": "display:customer-chat"
+    },
+    "context": {
+        "dev_oid": "don:identity:dvrv-us-1:devo/13GRGt258",
+        "automation_id": "",
+        "source_id": "don:integration:dvrv-us-1:devo/13GRGt258:namespace/devrev:command/cal",
+        "snap_in_id": "don:integration:dvrv-us-1:devo/13GRGt258:snap_in/04ac4ada-c104-457d-93f2-1bd5628c60df",
+        "snap_in_version_id": "don:integration:dvrv-us-1:devo/13GRGt258:snap_in_package/2312ba32-0835-47d9-bbe6-61b67128c3d3:snap_in_version/357284b1-6414-445f-9b4a-ecbc2cdf6929",
+        "service_account_id": "don:identity:dvrv-us-1:devo/13GRGt258:svcacc/46",
+        "secrets": {
+            "actor_session_token": "eyJhbGciOiJSUzI1NiIsImlzcyI6Imh0dHBzOi8vYXV0aC10b2tlbi5kZXZyZXYuYWkvIiwia2lkIjoic3RzX2tpZF9yc2EiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOlsiamFudXMiXSwiYXpwIjoiMTY2ZGZkZjAtNDM1NS00NDg5LThmYjgtM2JjNDY2ZWRhYzA1IiwiZXhwIjoxNzQwMjEzNzU2LCJodHRwOi8vZGV2cmV2LmFpL2F1dGgwX3VpZCI6ImRvbjppZGVudGl0eTpkdnJ2LXVzLTE6ZGV2by9zdXBlcjphdXRoMF91c2VyL29pZGN8cGFzc3dvcmRsZXNzfGVtYWlsfDY1NWNmZWVjYWRkZjZhODdmZTY0NGEzYyIsImh0dHA6Ly9kZXZyZXYuYWkvYXV0aDBfdXNlcl9pZCI6Im9pZGN8cGFzc3dvcmRsZXNzfGVtYWlsfDY1NWNmZWVjYWRkZjZhODdmZTY0NGEzYyIsImh0dHA6Ly9kZXZyZXYuYWkvZGV2b19kb24iOiJkb246aWRlbnRpdHk6ZHZydi11cy0xOmRldm8vMTNHUkd0MjU4IiwiaHR0cDovL2RldnJldi5haS9kZXZvaWQiOiJERVYtMTNHUkd0MjU4IiwiaHR0cDovL2RldnJldi5haS9kZXZ1aWQiOiJERVZVLTEiLCJodHRwOi8vZGV2cmV2LmFpL2VtYWlsIjoicHJhdGlrQGNvb2xoZWFkLmluIiwiaHR0cDovL2RldnJldi5haS9pc192ZXJpZmllZCI6dHJ1ZSwiaHR0cDovL2RldnJldi5haS90b2tlbnR5cGUiOiJ1cm46ZGV2cmV2OnBhcmFtczpvYXV0aDp0b2tlbi10eXBlOnNlc3Npb246ZGV2IiwiaWF0IjoxNzQwMjEzNDU2LCJpc3MiOiJodHRwczovL2F1dGgtdG9rZW4uZGV2cmV2LmFpLyIsImp0aSI6ImRvbjppZGVudGl0eTpkdnJ2LXVzLTE6ZGV2by8xM0dSR3QyNTg6dG9rZW4vMzdnM3FSOU58MDAxIiwib3JnX2lkIjoib3JnX1VwU3V3YkJlc3VmNVNIOVMiLCJzdWIiOiJvaWRjfHBhc3N3b3JkbGVzc3xlbWFpbHw2NTVjZmVlY2FkZGY2YTg3ZmU2NDRhM2MifQ.BZNTXGFNkjSL9U7vVSFSkCUBAkP3a0Rr7tL145QMbXrdmRJdX2IsKgE_VWF-HkIsZlpUbrO7CJXXak3RorztH5rXB3IT9fLt78xAXDQkHf08mBuuusBAYu9FvwcUvBpLkqBm1Re2JnG6XuNW_TlyshBdNqawnNiN5oIgN6NAYuGfxrfR3MWKeH6HFmsGZKlcq6tPNLngGe-7ZM4KRWEGn5zSqODqV8o7vytnlQ5eBAjO2mr5VCL3-IKVbjrs70AsW_CMqXExKEFhFEjVfYm2TORSvrtnMY8ugkkvkzMGNM6miLoqYw4AdAUVkmSXR-Qnqh6kdAM3WbnMcqEDqtdT9w",
+            "service_account_token": "eyJhbGciOiJSUzI1NiIsImlzcyI6Imh0dHBzOi8vYXV0aC10b2tlbi5kZXZyZXYuYWkvIiwia2lkIjoic3RzX2tpZF9yc2EiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOlsiamFudXMiXSwiYXpwIjoiZG9uOmlkZW50aXR5OmR2cnYtdXMtMTpkZXZvLzEzR1JHdDI1ODpzeXN1LzEiLCJleHAiOjE3NDAyMjA2NTYsImh0dHA6Ly9kZXZyZXYuYWkvYWF0X2FsbG93X2xpc3RlZCI6dHJ1ZSwiaHR0cDovL2RldnJldi5haS9jbGllbnRpZCI6ImRvbjppZGVudGl0eTpkdnJ2LXVzLTE6ZGV2by8xM0dSR3QyNTg6c3ZjYWNjLzQ2IiwiaHR0cDovL2RldnJldi5haS9kZXZvX2RvbiI6ImRvbjppZGVudGl0eTpkdnJ2LXVzLTE6ZGV2by8xM0dSR3QyNTgiLCJodHRwOi8vZGV2cmV2LmFpL2Rldm9pZCI6IkRFVi0xM0dSR3QyNTgiLCJodHRwOi8vZGV2cmV2LmFpL3N2Y2FjYyI6ImRvbjppZGVudGl0eTpkdnJ2LXVzLTE6ZGV2by8xM0dSR3QyNTg6c3ZjYWNjLzQ2IiwiaHR0cDovL2RldnJldi5haS90b2tlbnR5cGUiOiJ1cm46ZGV2cmV2OnBhcmFtczpvYXV0aDp0b2tlbi10eXBlOmFhdCIsImlhdCI6MTc0MDIxMzQ1NiwiaXNzIjoiaHR0cHM6Ly9hdXRoLXRva2VuLmRldnJldi5haS8iLCJqdGkiOiJkb246aWRlbnRpdHk6ZHZydi11cy0xOmRldm8vMTNHUkd0MjU4OnRva2VuL0FrZm4wbTlXIiwic3ViIjoiZG9uOmlkZW50aXR5OmR2cnYtdXMtMTpkZXZvLzEzR1JHdDI1ODpzdmNhY2MvNDYifQ.cjJ52hACkSygGrBPnmLxwCmcXz2Ld5iQEBLx7y4VXdRdEbBwTZJH9TxaCbN2e2flJc9qoEuE2SkP0z9tYSP6xi132GOfVQTWTTomoyv6I9Tz2AXh1ZMHrVi4i5lLKGrx5iCnlOap78HTqQntvLezeigbcfeLD15jOGEzGjtskozbHj5Hpm_pXV4JHyHSxFHdUlJD_eHsXY3w2LDvYFAECKdgi2dHkkp196UeNY2xydsIisupwCBvtrf5sVifOqn1pz8iv4ELS1sDiD5Wj9I4Or-N5nmai0KPi7BqaMIajKIJrjHsdfWy6t46Kwvh_oDVbmN1g_j6IEUtj81GYc6yMw"
+        },
+        "user_id": "don:identity:dvrv-us-1:devo/13GRGt258:devu/1",
+        "event_id": "",
+        "execution_id": ""
+    },
+    "execution_metadata": {
+        "request_id": "QECmEiUEnmMCv-6jnSraPg",
+        "function_name": "cal_command_handler",
+        "devrev_endpoint": "https://api.devrev.ai"
+    },
+    "input_data": {
+        "global_values": {
+            "cal_api_key": "cal_live_XXXXXXXXXXXXXXXXX"
+        },
+        "event_sources": {
+            "cal-app-source": "don:integration:dvrv-us-1:devo/13GRGt258:event_source/f921d0e8-5513-4d86-82ad-625f2f2d329b"
+        },
+        "keyrings": null,
+        "resources": {
+            "keyrings": {},
+            "tags": {}
+        }
+    }
+}

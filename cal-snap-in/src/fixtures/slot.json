@@ -1,0 +1,40 @@
+{
+    "json": {
+        "isTeamEvent": false,
+        "usernameList": [
+            "biomathcode"
+        ],
+        "eventTypeSlug": "15min",
+        "startTime": "2025-02-28T18:30:00.000Z",
+        "endTime": "2025-03-31T18:29:59.999Z",
+        "timeZone": "Asia/Calcutta",
+        "duration": null,
+        "rescheduleUid": null,
+        "orgSlug": null,
+        "teamMemberEmail": null,
+        "routedTeamMemberIds": null,
+        "skipContactOwner": false,
+        "shouldServeCache": null,
+        "routingFormResponseId": null,
+        "email": null
+    },
+    "meta": {
+        "values": {
+            "duration": [
+                "undefined"
+            ],
+            "orgSlug": [
+                "undefined"
+            ],
+            "teamMemberEmail": [
+                "undefined"
+            ],
+            "shouldServeCache": [
+                "undefined"
+            ],
+            "routingFormResponseId": [
+                "undefined"
+            ]
+        }
+    }
+}

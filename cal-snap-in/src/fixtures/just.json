@@ -1,0 +1,1539 @@
+{
+    "automations": [
+        {
+            "name": "github-commit-tracker",
+            "reference": {
+                "type": "automation",
+                "display_id": "automation-832461bb-d7fa-438d-bc51-1ac648716e88",
+                "id": "don:integration:dvrv-us-1:devo/13GRGt258:automation/832461bb-d7fa-438d-bc51-1ac648716e88",
+                "name": "github-commit-tracker"
+            }
+        }
+    ],
+    "created_by": {
+        "type": "dev_user",
+        "display_handle": "pratik",
+        "display_id": "DEVU-1",
+        "display_name": "pratik",
+        "email": "pratik@coolhead.in",
+        "full_name": "Pratik",
+        "id": "don:identity:dvrv-us-1:devo/13GRGt258:devu/1",
+        "id_v1": "don:DEV-13GRGt258:dev_user:DEVU-1",
+        "state": "active",
+        "thumbnail": "https://api.devrev.ai/internal/display-picture/Pratik.png"
+    },
+    "created_date": "2025-02-20T07:39:26.561Z",
+    "custom_fields": {
+        "obj__globals_part_id": "don:core:dvrv-us-1:devo/XXXXXXX:product/1"
+    },
+    "description": "Reflects commits that happen on GitHub in DevRev by posting to timeline of a product part.",
+    "display_id": "snap_in-3ae58398-452c-4654-9af2-ee6483fa27db",
+    "event_sources": [
+        {
+            "name": "github-app-source",
+            "reference": {
+                "type": "event_source",
+                "display_id": "event_source-a7701640-4d5b-4c9d-b830-057c641f1849",
+                "id": "don:integration:dvrv-us-1:devo/13GRGt258:event_source/a7701640-4d5b-4c9d-b830-057c641f1849",
+                "id_v1": "don:DEV-13GRGt258:event_source:a7701640-4d5b-4c9d-b830-057c641f1849"
+            }
+        }
+    ],
+    "id": "don:integration:dvrv-us-1:devo/13GRGt258:snap_in/3ae58398-452c-4654-9af2-ee6483fa27db",
+    "id_v1": "don:DEV-13GRGt258:snap_in:snap_in-3ae58398-452c-4654-9af2-ee6483fa27db",
+    "inputs": [
+        {
+            "name": "part_id",
+            "value": "don:core:dvrv-us-1:devo/XXXXXXX:product/1"
+        }
+    ],
+    "inputs_schema": [
+        {
+            "field_type": "id",
+            "db_name": "part_id",
+            "default_value": "don:core:dvrv-us-1:devo/XXXXXXX:product/1",
+            "description": "The default part on which to post commits.",
+            "id_type": [
+                "product"
+            ],
+            "is_required": true,
+            "name": "part_id",
+            "ui": {
+                "display_name": "The part on which to post commits."
+            }
+        }
+    ],
+    "inputs_values": {
+        "part_id": "don:core:dvrv-us-1:devo/XXXXXXX:product/1"
+    },
+    "modified_by": {
+        "type": "dev_user",
+        "display_handle": "pratik",
+        "display_id": "DEVU-1",
+        "display_name": "pratik",
+        "email": "pratik@coolhead.in",
+        "full_name": "Pratik",
+        "id": "don:identity:dvrv-us-1:devo/13GRGt258:devu/1",
+        "id_v1": "don:DEV-13GRGt258:dev_user:DEVU-1",
+        "state": "active",
+        "thumbnail": "https://api.devrev.ai/internal/display-picture/Pratik.png"
+    },
+    "modified_date": "2025-02-20T08:02:05.463Z",
+    "name": "Cal.com Integration new version",
+    "per_object_schema": [
+        {
+            "field_type": "id",
+            "db_name": "part_id",
+            "default_value": "don:core:dvrv-us-1:devo/XXXXXXX:product/1",
+            "description": "The default part on which to post commits.",
+            "id_type": [
+                "product"
+            ],
+            "is_required": true,
+            "name": "globals_part_id",
+            "ui": {
+                "display_name": "The part on which to post commits."
+            }
+        }
+    ],
+    "service_account": {
+        "type": "service_account",
+        "display_handle": "Cal.com Bot",
+        "display_id": "SVCACC-19",
+        "display_name": "Cal.com Bot",
+        "id": "don:identity:dvrv-us-1:devo/13GRGt258:svcacc/19",
+        "id_v1": "don:DEV-13GRGt258:svc_acc:SVCACC-19",
+        "state": "active",
+        "thumbnail": "https://api.devrev.ai/internal/display-picture/Cal.com%20Bot.png"
+    },
+    "snap_in_config": {
+        "global_inputs": [
+            {
+                "default_value": "don:core:dvrv-us-1:devo/XXXXXXX:product/1",
+                "description": "The default part on which to post commits.",
+                "display_name": "The part on which to post commits.",
+                "name": "part_id",
+                "type": "string"
+            }
+        ]
+    },
+    "snap_in_version": {
+        "display_id": "snap_in_version-ec34b396-73b3-447a-81be-0a0cdf143301",
+        "id": "don:integration:dvrv-us-1:devo/13GRGt258:snap_in_package/273afa3b-b873-448c-ae40-0850a2ad1683:snap_in_version/ec34b396-73b3-447a-81be-0a0cdf143301",
+        "slug": "cal_webhook04"
+    },
+    "status": "active"
+}
+{
+    "automations": [
+        {
+            "name": "calendar_sync_automation",
+            "reference": {
+                "type": "automation",
+                "display_id": "automation-c937c59b-44dc-4603-a8cd-b4e43c8b1fc5",
+                "id": "don:integration:dvrv-us-1:devo/13GRGt258:automation/c937c59b-44dc-4603-a8cd-b4e43c8b1fc5",
+                "name": "calendar_sync_automation"
+            }
+        }
+    ],
+    "commands": [
+        {
+            "name": "calendly",
+            "reference": {
+                "type": "command",
+                "display_id": "devrev/calendly",
+                "id": "don:integration:dvrv-us-1:devo/13GRGt258:namespace/devrev:command/calendly",
+                "id_v1": "don:DEV-13GRGt258:command:devrev/calendly",
+                "name": "calendly"
+            }
+        }
+    ],
+    "connection_definitions": [
+        {
+            "description": "Calendly Personal access token (PAT)",
+            "keyring_types": [
+                "snap_in_secret"
+            ],
+            "name": "calendly"
+        }
+    ],
+    "connections": [
+        {
+            "name": "calendly",
+            "reference": {
+                "type": "keyring",
+                "display_id": "keyring-33e7d038-f2c0-43da-8f32-4aab56cb5f2e",
+                "id": "don:integration:dvrv-us-1:devo/13GRGt258:keyring/33e7d038-f2c0-43da-8f32-4aab56cb5f2e",
+                "id_v1": "don:DEV-13GRGt258:keyring:keyring-33e7d038-f2c0-43da-8f32-4aab56cb5f2e"
+            }
+        }
+    ],
+    "created_by": {
+        "type": "dev_user",
+        "display_handle": "pratik",
+        "display_id": "DEVU-1",
+        "display_name": "pratik",
+        "email": "pratik@coolhead.in",
+        "full_name": "Pratik",
+        "id": "don:identity:dvrv-us-1:devo/13GRGt258:devu/1",
+        "id_v1": "don:DEV-13GRGt258:dev_user:DEVU-1",
+        "state": "active",
+        "thumbnail": "https://api.devrev.ai/internal/display-picture/Pratik.png"
+    },
+    "created_date": "2025-02-17T15:57:39.113Z",
+    "custom_fields": {
+        "obj__globals_allow_public_domains": false,
+        "obj__globals_create_opportunity": false
+    },
+    "description": "Streamline prospect meetings with Calendly \u0026 DevRev.",
+    "display_id": "snap_in-4b9716db-6b29-4e85-a08d-a4e9d034d15a",
+    "event_sources": [
+        {
+            "name": "calendly-source",
+            "reference": {
+                "type": "event_source",
+                "display_id": "event_source-782b663f-4d22-4c02-a254-ac8a8a5312c8",
+                "id": "don:integration:dvrv-us-1:devo/13GRGt258:event_source/782b663f-4d22-4c02-a254-ac8a8a5312c8",
+                "id_v1": "don:DEV-13GRGt258:event_source:782b663f-4d22-4c02-a254-ac8a8a5312c8"
+            }
+        }
+    ],
+    "id": "don:integration:dvrv-us-1:devo/13GRGt258:snap_in/4b9716db-6b29-4e85-a08d-a4e9d034d15a",
+    "id_v1": "don:DEV-13GRGt258:snap_in:snap_in-4b9716db-6b29-4e85-a08d-a4e9d034d15a",
+    "inputs": [
+        {
+            "name": "allow_public_domains",
+            "value": "false"
+        },
+        {
+            "name": "create_opportunity",
+            "value": "false"
+        }
+    ],
+    "inputs_schema": [
+        {
+            "field_type": "bool",
+            "db_name": "allow_public_domains",
+            "default_value": false,
+            "description": "Enable this feature to capture meetings scheduled by non-work email addresses, such as those from gmail.com or yahoo.com.",
+            "name": "allow_public_domains",
+            "ui": {
+                "display_name": "Track Meetings from Free Email Domains"
+            }
+        },
+        {
+            "field_type": "bool",
+            "db_name": "create_opportunity",
+            "default_value": false,
+            "description": "Enable this feature to automatically create an opportunity record along with the meeting details.",
+            "name": "create_opportunity",
+            "ui": {
+                "display_name": "Automatically Create Opportunities for New Meetings"
+            }
+        }
+    ],
+    "inputs_values": {
+        "allow_public_domains": false,
+        "create_opportunity": false
+    },
+    "marketplace": {
+        "display_id": "marketplace-adcb26c3-7312-4920-8ad0-1947cd20c00a",
+        "id": "don:integration:dvrv-global:devo/0:marketplace/adcb26c3-7312-4920-8ad0-1947cd20c00a",
+        "id_v1": "don:DEV-0:marketplace:adcb26c3-7312-4920-8ad0-1947cd20c00a",
+        "name": "DevRev Marketplace",
+        "slug": "marketplace"
+    },
+    "marketplace_item_details": {
+        "marketplace": {
+            "display_id": "marketplace-adcb26c3-7312-4920-8ad0-1947cd20c00a",
+            "id": "don:integration:dvrv-global:devo/0:marketplace/adcb26c3-7312-4920-8ad0-1947cd20c00a",
+            "id_v1": "don:DEV-0:marketplace:adcb26c3-7312-4920-8ad0-1947cd20c00a",
+            "name": "DevRev Marketplace",
+            "slug": "marketplace"
+        },
+        "marketplace_item_slug": "calendly"
+    },
+    "marketplace_item_slug": "calendly",
+    "modified_by": {
+        "type": "dev_user",
+        "display_handle": "pratik",
+        "display_id": "DEVU-1",
+        "display_name": "pratik",
+        "email": "pratik@coolhead.in",
+        "full_name": "Pratik",
+        "id": "don:identity:dvrv-us-1:devo/13GRGt258:devu/1",
+        "id_v1": "don:DEV-13GRGt258:dev_user:DEVU-1",
+        "state": "active",
+        "thumbnail": "https://api.devrev.ai/internal/display-picture/Pratik.png"
+    },
+    "modified_date": "2025-02-17T16:02:57.301Z",
+    "name": "Calendly",
+    "per_object_schema": [
+        {
+            "field_type": "bool",
+            "db_name": "allow_public_domains",
+            "default_value": false,
+            "description": "Enable this feature to capture meetings scheduled by non-work email addresses, such as those from gmail.com or yahoo.com.",
+            "name": "globals_allow_public_domains",
+            "ui": {
+                "display_name": "Track Meetings from Free Email Domains"
+            }
+        },
+        {
+            "field_type": "bool",
+            "db_name": "create_opportunity",
+            "default_value": false,
+            "description": "Enable this feature to automatically create an opportunity record along with the meeting details.",
+            "name": "globals_create_opportunity",
+            "ui": {
+                "display_name": "Automatically Create Opportunities for New Meetings"
+            }
+        }
+    ],
+    "service_account": {
+        "type": "service_account",
+        "display_handle": "DevRev Calendly Bot",
+        "display_id": "SVCACC-13",
+        "display_name": "DevRev Calendly Bot",
+        "id": "don:identity:dvrv-us-1:devo/13GRGt258:svcacc/13",
+        "id_v1": "don:DEV-13GRGt258:svc_acc:SVCACC-13",
+        "state": "active",
+        "thumbnail": "https://api.devrev.ai/internal/display-picture/DevRev%20Calendly%20Bot.png"
+    },
+    "snap_in_config": {
+        "connections": [
+            {
+                "description": "Calendly Personal access token (PAT)",
+                "name": "calendly",
+                "types": [
+                    "snap_in_secret"
+                ]
+            }
+        ],
+        "global_inputs": [
+            {
+                "default_value": "false",
+                "description": "Enable this feature to capture meetings scheduled by non-work email addresses, such as those from gmail.com or yahoo.com.",
+                "display_name": "Track Meetings from Free Email Domains",
+                "name": "allow_public_domains",
+                "type": "bool"
+            },
+            {
+                "default_value": "false",
+                "description": "Enable this feature to automatically create an opportunity record along with the meeting details.",
+                "display_name": "Automatically Create Opportunities for New Meetings",
+                "name": "create_opportunity",
+                "type": "bool"
+            }
+        ]
+    },
+    "snap_in_version": {
+        "display_id": "snap_in_version-a443257d-b7d5-4fde-a4fb-d1f93438f176",
+        "id": "don:integration:dvrv-us-1:devo/0:snap_in_package/f90607f8-65a1-41d7-8433-b8f532a2f761:snap_in_version/a443257d-b7d5-4fde-a4fb-d1f93438f176",
+        "slug": "calendly",
+        "version": {
+            "major": 0,
+            "minor": 0,
+            "patch": 1
+        }
+    },
+    "snap_in_version_semver": {
+        "major": 0,
+        "minor": 0,
+        "patch": 1
+    },
+    "status": "active"
+}
+{
+    "automations": [
+        {
+            "name": "handle-email-event"
+        },
+        {
+            "name": "handle-timeline-entry-created-event"
+        },
+        {
+            "name": "email_delivery_events_lambda"
+        }
+    ],
+    "connection_definitions": [
+        {
+            "display_name": "Domain Connection",
+            "keyring_types": [
+                "domain_verification",
+                "google",
+                "sendgrid"
+            ],
+            "name": "dmarc",
+            "optional": false
+        }
+    ],
+    "connections": [
+        {
+            "name": "dmarc"
+        }
+    ],
+    "created_by": {
+        "type": "dev_user",
+        "display_handle": "pratik",
+        "display_id": "DEVU-1",
+        "display_name": "pratik",
+        "email": "pratik@coolhead.in",
+        "full_name": "Pratik",
+        "id": "don:identity:dvrv-us-1:devo/13GRGt258:devu/1",
+        "id_v1": "don:DEV-13GRGt258:dev_user:DEVU-1",
+        "state": "active",
+        "thumbnail": "https://api.devrev.ai/internal/display-picture/Pratik.png"
+    },
+    "created_date": "2025-02-17T15:54:14.973Z",
+    "custom_fields": {
+        "obj__globals_auto_reply_message": "Thank you for writing in, we will respond as soon as possible. While you wait, please add any additional information that may help us with your inquiry.",
+        "obj__globals_csat_from_address": "no-reply@devrev.ai",
+        "obj__globals_email_block_threshold": 100,
+        "obj__globals_email_spam_threshold": 30,
+        "obj__globals_enable_bot_replies_emails": true,
+        "obj__globals_identify_rev_org": true,
+        "obj__globals_infer_users_from_email_body": true,
+        "obj__globals_is_email_default_channel": false,
+        "obj__globals_notifications_from_address": "notifications@devrev.ai",
+        "obj__globals_primary_sync_object": "Ticket",
+        "obj__globals_send_auto_replies_to": [
+            "Customers"
+        ],
+        "obj__globals_support_email": "",
+        "obj__globals_use_commenter_name_in_from_address": false
+    },
+    "description": "Talk to your customers over email directly from DevRev.",
+    "display_id": "snap_in-e66edf24-33ca-470e-8d65-b0f73aca2d54",
+    "event_sources": [
+        {
+            "name": "email-event-source"
+        },
+        {
+            "name": "devrev-event-source"
+        },
+        {
+            "name": "email-delivery-event-source"
+        }
+    ],
+    "hooks": [
+        {
+            "function_reference": {
+                "display_id": "snap_in_function-c3d73205-c6de-4bc2-aeef-521e54226efc",
+                "id": "don:integration:dvrv-us-1:devo/0:snap_in_function/c3d73205-c6de-4bc2-aeef-521e54226efc"
+            },
+            "type": "validate"
+        },
+        {
+            "function_reference": {
+                "display_id": "snap_in_function-c3d73205-c6de-4bc2-aeef-521e54226efc",
+                "id": "don:integration:dvrv-us-1:devo/0:snap_in_function/c3d73205-c6de-4bc2-aeef-521e54226efc"
+            },
+            "type": "activate"
+        },
+        {
+            "function_reference": {
+                "display_id": "snap_in_function-c3d73205-c6de-4bc2-aeef-521e54226efc",
+                "id": "don:integration:dvrv-us-1:devo/0:snap_in_function/c3d73205-c6de-4bc2-aeef-521e54226efc"
+            },
+            "type": "update"
+        },
+        {
+            "function_reference": {
+                "display_id": "snap_in_function-c3d73205-c6de-4bc2-aeef-521e54226efc",
+                "id": "don:integration:dvrv-us-1:devo/0:snap_in_function/c3d73205-c6de-4bc2-aeef-521e54226efc"
+            },
+            "type": "deactivate"
+        }
+    ],
+    "id": "don:integration:dvrv-us-1:devo/13GRGt258:snap_in/e66edf24-33ca-470e-8d65-b0f73aca2d54",
+    "id_v1": "don:DEV-13GRGt258:snap_in:snap_in-e66edf24-33ca-470e-8d65-b0f73aca2d54",
+    "inputs": [
+        {
+            "name": "support_email",
+            "value": ""
+        },
+        {
+            "name": "primary_sync_object",
+            "value": "Ticket"
+        },
+        {
+            "name": "is_email_default_channel",
+            "value": "false"
+        },
+        {
+            "name": "additional_support_emails"
+        },
+        {
+            "name": "default_part"
+        },
+        {
+            "name": "default_owner"
+        },
+        {
+            "name": "additional_conversation_emails"
+        },
+        {
+            "name": "use_commenter_name_in_from_address",
+            "value": "false"
+        },
+        {
+            "name": "custom_email_signature"
+        },
+        {
+            "name": "identify_rev_org",
+            "value": "true"
+        },
+        {
+            "name": "enable_bot_replies_emails",
+            "value": "true"
+        },
+        {
+            "name": "send_auto_replies_to",
+            "value": "[\"Customers\"]"
+        },
+        {
+            "name": "auto_reply_message",
+            "value": "Thank you for writing in, we will respond as soon as possible. While you wait, please add any additional information that may help us with your inquiry."
+        },
+        {
+            "name": "infer_users_from_email_body",
+            "value": "true"
+        },
+        {
+            "name": "users_to_notify"
+        },
+        {
+            "name": "email_spam_threshold",
+            "value": "30"
+        },
+        {
+            "name": "email_block_threshold",
+            "value": "100"
+        },
+        {
+            "name": "notifications_from_address",
+            "value": "notifications@devrev.ai"
+        },
+        {
+            "name": "notifications_org_logo_url"
+        },
+        {
+            "name": "csat_from_address",
+            "value": "no-reply@devrev.ai"
+        }
+    ],
+    "inputs_schema": [
+        {
+            "field_type": "tokens",
+            "db_name": "support_email",
+            "default_value": "",
+            "description": "Enter email address in this format - \"Maple Support \u003csupport@maplesoftware.net\u003e\" where \"Maple Support\" is the Name which appears in your customer's inbox.",
+            "is_required": true,
+            "name": "support_email",
+            "ui": {
+                "display_name": "Primary Email Address",
+                "placeholder": "Maple Support \u003csupport@maplesoftware.net\u003e"
+            }
+        },
+        {
+            "field_type": "enum",
+            "allowed_values": [
+                "Ticket",
+                "Conversation"
+            ],
+            "db_name": "primary_sync_object",
+            "default_value": "Ticket",
+            "description": "Choose what DevRev should do from emails sent to the primary email address.",
+            "is_required": true,
+            "name": "primary_sync_object",
+            "ui": {
+                "display_name": "Primary Use Case"
+            }
+        },
+        {
+            "field_type": "bool",
+            "db_name": "is_email_default_channel",
+            "default_value": false,
+            "description": "If enabled, all messages to the customer chat will be sent via email as well as to the source channel of the ticket.",
+            "name": "is_email_default_channel",
+            "ui": {
+                "display_name": "Set email as the default channel for tickets"
+            }
+        },
+        {
+            "field_type": "array",
+            "base_type": "tokens",
+            "db_name": "additional_support_emails",
+            "description": "Enter additional support emails below to create Tickets on DevRev. Eg. Maple Help \u003chelp@maplesoftware.net\u003e",
+            "name": "additional_support_emails",
+            "ui": {
+                "display_name": "Additional Emails for Tickets",
+                "placeholder": "Maple Help \u003chelp@maplesoftware.net\u003e"
+            }
+        },
+        {
+            "field_type": "id",
+            "db_name": "default_part",
+            "description": "Select the default part of your product (Required if tickets are created from the configured emails)",
+            "id_type": [
+                "product",
+                "capability"
+            ],
+            "name": "default_part",
+            "ui": {
+                "display_name": "Default Part"
+            }
+        },
+        {
+            "field_type": "id",
+            "db_name": "default_owner",
+            "description": "Select the default owner for tickets created from emails",
+            "id_type": [
+                "devu"
+            ],
+            "name": "default_owner",
+            "ui": {
+                "display_name": "Default Owner"
+            }
+        },
+        {
+            "field_type": "array",
+            "base_type": "tokens",
+            "db_name": "additional_conversation_emails",
+            "description": "Enter additional support emails below to create Conversations on DevRev. Eg. Maple Sales \u003csales@maplesoftware.net\u003e",
+            "name": "additional_conversation_emails",
+            "ui": {
+                "display_name": "Additional email addresses for Conversations",
+                "placeholder": "Maple Sales \u003csales@maplesoftware.net\u003e"
+            }
+        },
+        {
+            "field_type": "bool",
+            "db_name": "use_commenter_name_in_from_address",
+            "default_value": false,
+            "description": "If enabled, name of the logged-in user will be the sender name for outgoing emails",
+            "is_required": true,
+            "name": "use_commenter_name_in_from_address",
+            "ui": {
+                "display_name": "Use the name of the logged-in user as sender name"
+            }
+        },
+        {
+            "field_type": "text",
+            "db_name": "custom_email_signature",
+            "description": "This signature would be added to all emails sent from DevRev. If personalised email signature is present, this signature will be added only to emails that automations send.",
+            "name": "custom_email_signature",
+            "ui": {
+                "display_name": "Organisation-wide Email Signature"
+            }
+        },
+        {
+            "field_type": "bool",
+            "db_name": "identify_rev_org",
+            "default_value": true,
+            "description": "If enabled, new account is created when the email domain does not map to an existing account. No accounts are created for common domains such as gmail.com, yahoo.com and others.",
+            "is_required": true,
+            "name": "identify_rev_org",
+            "ui": {
+                "display_name": "Create accounts for new domains"
+            }
+        },
+        {
+            "field_type": "bool",
+            "db_name": "enable_bot_replies_emails",
+            "default_value": true,
+            "description": "Turning this off will disable any other automation to send emails on your behalf",
+            "is_required": true,
+            "name": "enable_bot_replies_emails",
+            "ui": {
+                "display_name": "Allow automations to send emails"
+            }
+        },
+        {
+            "field_type": "array",
+            "base_type": "enum",
+            "allowed_values": [
+                "Customers",
+                "Employees"
+            ],
+            "db_name": "send_auto_replies_to",
+            "default_value": [
+                "Customers"
+            ],
+            "description": "Choose who should be sent an auto-reply message when an email is received",
+            "name": "send_auto_replies_to",
+            "ui": {
+                "display_name": "Send auto-reply message to"
+            }
+        },
+        {
+            "field_type": "text",
+            "db_name": "auto_reply_message",
+            "default_value": "Thank you for writing in, we will respond as soon as possible. While you wait, please add any additional information that may help us with your inquiry.",
+            "description": "This message will be sent to the user as a response to the first email",
+            "name": "auto_reply_message",
+            "ui": {
+                "display_name": "Auto reply message"
+            }
+        },
+        {
+            "field_type": "bool",
+            "db_name": "infer_users_from_email_body",
+            "default_value": true,
+            "description": "Capture the customer workspace and reported by details on the ticket from the forwarded emails, even if the customer is not a part of the email thread",
+            "is_required": true,
+            "name": "infer_users_from_email_body",
+            "ui": {
+                "display_name": "Capture customer details from forwarded emails"
+            }
+        },
+        {
+            "field_type": "array",
+            "base_type": "id",
+            "db_name": "users_to_notify",
+            "description": "Select users from the list below to receive notifications whenever an email is dropped or a person is marked as a spammer",
+            "id_type": [
+                "devu"
+            ],
+            "name": "users_to_notify",
+            "ui": {
+                "display_name": "Select Users for Notification"
+            }
+        },
+        {
+            "field_type": "int",
+            "db_name": "email_spam_threshold",
+            "default_value": 30,
+            "description": "Specify the maximum number of emails a user can send within a 10-minute timeframe before being flagged as a spammer.",
+            "is_required": true,
+            "lte": 100,
+            "name": "email_spam_threshold",
+            "ui": {
+                "display_name": "Set Maximum Emails per 10 Minutes"
+            }
+        },
+        {
+            "field_type": "int",
+            "db_name": "email_block_threshold",
+            "default_value": 100,
+            "description": "Specify the maximum number of emails allowed within a 24-hour window for users marked as spammers.",
+            "is_required": true,
+            "lte": 1000,
+            "name": "email_block_threshold",
+            "ui": {
+                "display_name": "Set Maximum Spam Emails per 24 Hours"
+            }
+        },
+        {
+            "field_type": "enum",
+            "allowed_values": [
+                "notifications@devrev.ai",
+                "Primary Email Address",
+                "Disable Customer Notifications"
+            ],
+            "db_name": "notifications_from_address",
+            "default_value": "notifications@devrev.ai",
+            "description": "Choose the email address from which notifications will be sent to the customer",
+            "is_required": true,
+            "name": "notifications_from_address",
+            "ui": {
+                "display_name": "Notification Sender Email Address"
+            }
+        },
+        {
+            "field_type": "tokens",
+            "db_name": "notifications_org_logo_url",
+            "description": "Specify the public URL for the organisation logo to be added to the notifications.",
+            "name": "notifications_org_logo_url",
+            "ui": {
+                "display_name": "Organisation Logo URL",
+                "placeholder": "https://maplesoftware.net/assets/img/logo-transparent-background.png"
+            }
+        },
+        {
+            "field_type": "enum",
+            "allowed_values": [
+                "no-reply@devrev.ai",
+                "Primary Email Address",
+                "Disable CSAT surveys"
+            ],
+            "db_name": "csat_from_address",
+            "default_value": "no-reply@devrev.ai",
+            "description": "Choose the email address from which CSAT surveys will be sent to the customer",
+            "is_required": false,
+            "name": "csat_from_address",
+            "ui": {
+                "display_name": "CSAT Survey Sender Email Address"
+            }
+        }
+    ],
+    "inputs_values": {
+        "auto_reply_message": "Thank you for writing in, we will respond as soon as possible. While you wait, please add any additional information that may help us with your inquiry.",
+        "csat_from_address": "no-reply@devrev.ai",
+        "email_block_threshold": 100,
+        "email_spam_threshold": 30,
+        "enable_bot_replies_emails": true,
+        "identify_rev_org": true,
+        "infer_users_from_email_body": true,
+        "is_email_default_channel": false,
+        "notifications_from_address": "notifications@devrev.ai",
+        "primary_sync_object": "Ticket",
+        "send_auto_replies_to": [
+            "Customers"
+        ],
+        "support_email": "",
+        "use_commenter_name_in_from_address": false
+    },
+    "marketplace": {
+        "display_id": "marketplace-adcb26c3-7312-4920-8ad0-1947cd20c00a",
+        "id": "don:integration:dvrv-global:devo/0:marketplace/adcb26c3-7312-4920-8ad0-1947cd20c00a",
+        "id_v1": "don:DEV-0:marketplace:adcb26c3-7312-4920-8ad0-1947cd20c00a",
+        "name": "DevRev Marketplace",
+        "slug": "marketplace"
+    },
+    "marketplace_item_details": {
+        "marketplace": {
+            "display_id": "marketplace-adcb26c3-7312-4920-8ad0-1947cd20c00a",
+            "id": "don:integration:dvrv-global:devo/0:marketplace/adcb26c3-7312-4920-8ad0-1947cd20c00a",
+            "id_v1": "don:DEV-0:marketplace:adcb26c3-7312-4920-8ad0-1947cd20c00a",
+            "name": "DevRev Marketplace",
+            "slug": "marketplace"
+        },
+        "marketplace_item_slug": "email-with-tickets"
+    },
+    "marketplace_item_slug": "email-with-tickets",
+    "modified_by": {
+        "type": "dev_user",
+        "display_handle": "pratik",
+        "display_id": "DEVU-1",
+        "display_name": "pratik",
+        "email": "pratik@coolhead.in",
+        "full_name": "Pratik",
+        "id": "don:identity:dvrv-us-1:devo/13GRGt258:devu/1",
+        "id_v1": "don:DEV-13GRGt258:dev_user:DEVU-1",
+        "state": "active",
+        "thumbnail": "https://api.devrev.ai/internal/display-picture/Pratik.png"
+    },
+    "modified_date": "2025-02-17T15:54:14.973Z",
+    "name": "Email Integration",
+    "per_object_schema": [
+        {
+            "field_type": "tokens",
+            "db_name": "support_email",
+            "default_value": "",
+            "description": "Enter email address in this format - \"Maple Support \u003csupport@maplesoftware.net\u003e\" where \"Maple Support\" is the Name which appears in your customer's inbox.",
+            "is_required": true,
+            "name": "globals_support_email",
+            "ui": {
+                "display_name": "Primary Email Address",
+                "placeholder": "Maple Support \u003csupport@maplesoftware.net\u003e"
+            }
+        },
+        {
+            "field_type": "enum",
+            "allowed_values": [
+                "Ticket",
+                "Conversation"
+            ],
+            "db_name": "primary_sync_object",
+            "default_value": "Ticket",
+            "description": "Choose what DevRev should do from emails sent to the primary email address.",
+            "is_required": true,
+            "name": "globals_primary_sync_object",
+            "ui": {
+                "display_name": "Primary Use Case"
+            }
+        },
+        {
+            "field_type": "bool",
+            "db_name": "is_email_default_channel",
+            "default_value": false,
+            "description": "If enabled, all messages to the customer chat will be sent via email as well as to the source channel of the ticket.",
+            "name": "globals_is_email_default_channel",
+            "ui": {
+                "display_name": "Set email as the default channel for tickets"
+            }
+        },
+        {
+            "field_type": "array",
+            "base_type": "tokens",
+            "db_name": "additional_support_emails",
+            "description": "Enter additional support emails below to create Tickets on DevRev. Eg. Maple Help \u003chelp@maplesoftware.net\u003e",
+            "name": "globals_additional_support_emails",
+            "ui": {
+                "display_name": "Additional Emails for Tickets",
+                "placeholder": "Maple Help \u003chelp@maplesoftware.net\u003e"
+            }
+        },
+        {
+            "field_type": "id",
+            "db_name": "default_part",
+            "description": "Select the default part of your product (Required if tickets are created from the configured emails)",
+            "id_type": [
+                "product",
+                "capability"
+            ],
+            "name": "globals_default_part",
+            "ui": {
+                "display_name": "Default Part"
+            }
+        },
+        {
+            "field_type": "id",
+            "db_name": "default_owner",
+            "description": "Select the default owner for tickets created from emails",
+            "id_type": [
+                "devu"
+            ],
+            "name": "globals_default_owner",
+            "ui": {
+                "display_name": "Default Owner"
+            }
+        },
+        {
+            "field_type": "array",
+            "base_type": "tokens",
+            "db_name": "additional_conversation_emails",
+            "description": "Enter additional support emails below to create Conversations on DevRev. Eg. Maple Sales \u003csales@maplesoftware.net\u003e",
+            "name": "globals_additional_conversation_emails",
+            "ui": {
+                "display_name": "Additional email addresses for Conversations",
+                "placeholder": "Maple Sales \u003csales@maplesoftware.net\u003e"
+            }
+        },
+        {
+            "field_type": "bool",
+            "db_name": "use_commenter_name_in_from_address",
+            "default_value": false,
+            "description": "If enabled, name of the logged-in user will be the sender name for outgoing emails",
+            "is_required": true,
+            "name": "globals_use_commenter_name_in_from_address",
+            "ui": {
+                "display_name": "Use the name of the logged-in user as sender name"
+            }
+        },
+        {
+            "field_type": "text",
+            "db_name": "custom_email_signature",
+            "description": "This signature would be added to all emails sent from DevRev. If personalised email signature is present, this signature will be added only to emails that automations send.",
+            "name": "globals_custom_email_signature",
+            "ui": {
+                "display_name": "Organisation-wide Email Signature"
+            }
+        },
+        {
+            "field_type": "bool",
+            "db_name": "identify_rev_org",
+            "default_value": true,
+            "description": "If enabled, new account is created when the email domain does not map to an existing account. No accounts are created for common domains such as gmail.com, yahoo.com and others.",
+            "is_required": true,
+            "name": "globals_identify_rev_org",
+            "ui": {
+                "display_name": "Create accounts for new domains"
+            }
+        },
+        {
+            "field_type": "bool",
+            "db_name": "enable_bot_replies_emails",
+            "default_value": true,
+            "description": "Turning this off will disable any other automation to send emails on your behalf",
+            "is_required": true,
+            "name": "globals_enable_bot_replies_emails",
+            "ui": {
+                "display_name": "Allow automations to send emails"
+            }
+        },
+        {
+            "field_type": "array",
+            "base_type": "enum",
+            "allowed_values": [
+                "Customers",
+                "Employees"
+            ],
+            "db_name": "send_auto_replies_to",
+            "default_value": [
+                "Customers"
+            ],
+            "description": "Choose who should be sent an auto-reply message when an email is received",
+            "name": "globals_send_auto_replies_to",
+            "ui": {
+                "display_name": "Send auto-reply message to"
+            }
+        },
+        {
+            "field_type": "text",
+            "db_name": "auto_reply_message",
+            "default_value": "Thank you for writing in, we will respond as soon as possible. While you wait, please add any additional information that may help us with your inquiry.",
+            "description": "This message will be sent to the user as a response to the first email",
+            "name": "globals_auto_reply_message",
+            "ui": {
+                "display_name": "Auto reply message"
+            }
+        },
+        {
+            "field_type": "bool",
+            "db_name": "infer_users_from_email_body",
+            "default_value": true,
+            "description": "Capture the customer workspace and reported by details on the ticket from the forwarded emails, even if the customer is not a part of the email thread",
+            "is_required": true,
+            "name": "globals_infer_users_from_email_body",
+            "ui": {
+                "display_name": "Capture customer details from forwarded emails"
+            }
+        },
+        {
+            "field_type": "array",
+            "base_type": "id",
+            "db_name": "users_to_notify",
+            "description": "Select users from the list below to receive notifications whenever an email is dropped or a person is marked as a spammer",
+            "id_type": [
+                "devu"
+            ],
+            "name": "globals_users_to_notify",
+            "ui": {
+                "display_name": "Select Users for Notification"
+            }
+        },
+        {
+            "field_type": "int",
+            "db_name": "email_spam_threshold",
+            "default_value": 30,
+            "description": "Specify the maximum number of emails a user can send within a 10-minute timeframe before being flagged as a spammer.",
+            "is_required": true,
+            "lte": 100,
+            "name": "globals_email_spam_threshold",
+            "ui": {
+                "display_name": "Set Maximum Emails per 10 Minutes"
+            }
+        },
+        {
+            "field_type": "int",
+            "db_name": "email_block_threshold",
+            "default_value": 100,
+            "description": "Specify the maximum number of emails allowed within a 24-hour window for users marked as spammers.",
+            "is_required": true,
+            "lte": 1000,
+            "name": "globals_email_block_threshold",
+            "ui": {
+                "display_name": "Set Maximum Spam Emails per 24 Hours"
+            }
+        },
+        {
+            "field_type": "enum",
+            "allowed_values": [
+                "notifications@devrev.ai",
+                "Primary Email Address",
+                "Disable Customer Notifications"
+            ],
+            "db_name": "notifications_from_address",
+            "default_value": "notifications@devrev.ai",
+            "description": "Choose the email address from which notifications will be sent to the customer",
+            "is_required": true,
+            "name": "globals_notifications_from_address",
+            "ui": {
+                "display_name": "Notification Sender Email Address"
+            }
+        },
+        {
+            "field_type": "tokens",
+            "db_name": "notifications_org_logo_url",
+            "description": "Specify the public URL for the organisation logo to be added to the notifications.",
+            "name": "globals_notifications_org_logo_url",
+            "ui": {
+                "display_name": "Organisation Logo URL",
+                "placeholder": "https://maplesoftware.net/assets/img/logo-transparent-background.png"
+            }
+        },
+        {
+            "field_type": "enum",
+            "allowed_values": [
+                "no-reply@devrev.ai",
+                "Primary Email Address",
+                "Disable CSAT surveys"
+            ],
+            "db_name": "csat_from_address",
+            "default_value": "no-reply@devrev.ai",
+            "description": "Choose the email address from which CSAT surveys will be sent to the customer",
+            "is_required": false,
+            "name": "globals_csat_from_address",
+            "ui": {
+                "display_name": "CSAT Survey Sender Email Address"
+            }
+        }
+    ],
+    "service_account": {
+        "type": "service_account",
+        "display_handle": "Email Integration Bot",
+        "display_id": "SVCACC-12",
+        "display_name": "Email Integration Bot",
+        "id": "don:identity:dvrv-us-1:devo/13GRGt258:svcacc/12",
+        "id_v1": "don:DEV-13GRGt258:svc_acc:SVCACC-12",
+        "state": "active",
+        "thumbnail": "https://api.devrev.ai/internal/display-picture/Email%20Integration%20Bot.png"
+    },
+    "snap_components": [
+        {
+            "name": "email_composer"
+        }
+    ],
+    "snap_in_config": {
+        "connections": [
+            {
+                "name": "dmarc",
+                "optional": false,
+                "types": [
+                    "domain_verification",
+                    "google",
+                    "sendgrid"
+                ]
+            }
+        ],
+        "global_inputs": [
+            {
+                "default_value": "",
+                "description": "Enter email address in this format - \"Maple Support \u003csupport@maplesoftware.net\u003e\" where \"Maple Support\" is the Name which appears in your customer's inbox.",
+                "display_name": "Primary Email Address",
+                "name": "support_email",
+                "type": "string"
+            },
+            {
+                "allowed_values": [
+                    "Ticket",
+                    "Conversation"
+                ],
+                "default_value": "Ticket",
+                "description": "Choose what DevRev should do from emails sent to the primary email address.",
+                "display_name": "Primary Use Case",
+                "name": "primary_sync_object",
+                "type": "enum"
+            },
+            {
+                "default_value": "false",
+                "description": "If enabled, all messages to the customer chat will be sent via email as well as to the source channel of the ticket.",
+                "display_name": "Set email as the default channel for tickets",
+                "name": "is_email_default_channel",
+                "type": "bool"
+            },
+            {
+                "description": "Enter additional support emails below to create Tickets on DevRev. Eg. Maple Help \u003chelp@maplesoftware.net\u003e",
+                "display_name": "Additional Emails for Tickets",
+                "name": "additional_support_emails",
+                "type": "string_list"
+            },
+            {
+                "description": "Select the default part of your product (Required if tickets are created from the configured emails)",
+                "display_name": "Default Part",
+                "name": "default_part",
+                "type": "string"
+            },
+            {
+                "description": "Select the default owner for tickets created from emails",
+                "display_name": "Default Owner",
+                "name": "default_owner",
+                "type": "string"
+            },
+            {
+                "description": "Enter additional support emails below to create Conversations on DevRev. Eg. Maple Sales \u003csales@maplesoftware.net\u003e",
+                "display_name": "Additional email addresses for Conversations",
+                "name": "additional_conversation_emails",
+                "type": "string_list"
+            },
+            {
+                "default_value": "false",
+                "description": "If enabled, name of the logged-in user will be the sender name for outgoing emails",
+                "display_name": "Use the name of the logged-in user as sender name",
+                "name": "use_commenter_name_in_from_address",
+                "type": "bool"
+            },
+            {
+                "description": "This signature would be added to all emails sent from DevRev. If personalised email signature is present, this signature will be added only to emails that automations send.",
+                "display_name": "Organisation-wide Email Signature",
+                "name": "custom_email_signature",
+                "type": "string"
+            },
+            {
+                "default_value": "true",
+                "description": "If enabled, new account is created when the email domain does not map to an existing account. No accounts are created for common domains such as gmail.com, yahoo.com and others.",
+                "display_name": "Create accounts for new domains",
+                "name": "identify_rev_org",
+                "type": "bool"
+            },
+            {
+                "default_value": "true",
+                "description": "Turning this off will disable any other automation to send emails on your behalf",
+                "display_name": "Allow automations to send emails",
+                "name": "enable_bot_replies_emails",
+                "type": "bool"
+            },
+            {
+                "allowed_values": [
+                    "Customers",
+                    "Employees"
+                ],
+                "default_value": "[\"Customers\"]",
+                "description": "Choose who should be sent an auto-reply message when an email is received",
+                "display_name": "Send auto-reply message to",
+                "name": "send_auto_replies_to",
+                "type": "enum_list"
+            },
+            {
+                "default_value": "Thank you for writing in, we will respond as soon as possible. While you wait, please add any additional information that may help us with your inquiry.",
+                "description": "This message will be sent to the user as a response to the first email",
+                "display_name": "Auto reply message",
+                "name": "auto_reply_message",
+                "type": "string"
+            },
+            {
+                "default_value": "true",
+                "description": "Capture the customer workspace and reported by details on the ticket from the forwarded emails, even if the customer is not a part of the email thread",
+                "display_name": "Capture customer details from forwarded emails",
+                "name": "infer_users_from_email_body",
+                "type": "bool"
+            },
+            {
+                "description": "Select users from the list below to receive notifications whenever an email is dropped or a person is marked as a spammer",
+                "display_name": "Select Users for Notification",
+                "name": "users_to_notify",
+                "type": "string_list"
+            },
+            {
+                "default_value": "30",
+                "description": "Specify the maximum number of emails a user can send within a 10-minute timeframe before being flagged as a spammer.",
+                "display_name": "Set Maximum Emails per 10 Minutes",
+                "name": "email_spam_threshold",
+                "type": "integer"
+            },
+            {
+                "default_value": "100",
+                "description": "Specify the maximum number of emails allowed within a 24-hour window for users marked as spammers.",
+                "display_name": "Set Maximum Spam Emails per 24 Hours",
+                "name": "email_block_threshold",
+                "type": "integer"
+            },
+            {
+                "allowed_values": [
+                    "notifications@devrev.ai",
+                    "Primary Email Address",
+                    "Disable Customer Notifications"
+                ],
+                "default_value": "notifications@devrev.ai",
+                "description": "Choose the email address from which notifications will be sent to the customer",
+                "display_name": "Notification Sender Email Address",
+                "name": "notifications_from_address",
+                "type": "enum"
+            },
+            {
+                "description": "Specify the public URL for the organisation logo to be added to the notifications.",
+                "display_name": "Organisation Logo URL",
+                "name": "notifications_org_logo_url",
+                "type": "string"
+            },
+            {
+                "allowed_values": [
+                    "no-reply@devrev.ai",
+                    "Primary Email Address",
+                    "Disable CSAT surveys"
+                ],
+                "default_value": "no-reply@devrev.ai",
+                "description": "Choose the email address from which CSAT surveys will be sent to the customer",
+                "display_name": "CSAT Survey Sender Email Address",
+                "name": "csat_from_address",
+                "type": "enum"
+            }
+        ]
+    },
+    "snap_in_version": {
+        "display_id": "snap_in_version-09a6f660-c838-4ecd-99c7-9ef94fdf1dc5",
+        "id": "don:integration:dvrv-us-1:devo/0:snap_in_package/c1c0d2a9-f804-4599-8adc-c5080c54e32a:snap_in_version/09a6f660-c838-4ecd-99c7-9ef94fdf1dc5",
+        "slug": "email-integration",
+        "version": {
+            "major": 0,
+            "minor": 0,
+            "patch": 91
+        }
+    },
+    "snap_in_version_semver": {
+        "major": 0,
+        "minor": 0,
+        "patch": 91
+    },
+    "snap_kit_actions": [
+        {
+            "name": "init_email_composer"
+        },
+        {
+            "name": "ingest_email_retry"
+        },
+        {
+            "name": "dismiss_timeline_entry"
+        },
+        {
+            "name": "process_survey_response"
+        }
+    ],
+    "status": "draft",
+    "tags": [
+        {
+            "name": "power-user"
+        },
+        {
+            "name": "blocked"
+        },
+        {
+            "name": "duplicate-alert"
+        }
+    ]
+}
+{
+    "automations": [
+        {
+            "name": "send-remind-notification",
+            "reference": {
+                "type": "automation",
+                "display_id": "automation-3f2772a2-285e-43fe-9391-2966a9b41790",
+                "id": "don:integration:dvrv-us-1:devo/13GRGt258:automation/3f2772a2-285e-43fe-9391-2966a9b41790",
+                "name": "send-remind-notification"
+            }
+        },
+        {
+            "name": "create-summary",
+            "reference": {
+                "type": "automation",
+                "display_id": "automation-3ba1e88b-24a9-4273-985d-50532625406f",
+                "id": "don:integration:dvrv-us-1:devo/13GRGt258:automation/3ba1e88b-24a9-4273-985d-50532625406f",
+                "name": "create-summary"
+            }
+        }
+    ],
+    "commands": [
+        {
+            "name": "remind",
+            "reference": {
+                "type": "command",
+                "display_id": "devrev/remind",
+                "id": "don:integration:dvrv-us-1:devo/13GRGt258:namespace/devrev:command/remind",
+                "id_v1": "don:DEV-13GRGt258:command:devrev/remind",
+                "name": "remind"
+            }
+        },
+        {
+            "name": "rephrase",
+            "reference": {
+                "type": "command",
+                "display_id": "devrev/rephrase",
+                "id": "don:integration:dvrv-us-1:devo/13GRGt258:namespace/devrev:command/rephrase",
+                "id_v1": "don:DEV-13GRGt258:command:devrev/rephrase",
+                "name": "rephrase"
+            }
+        },
+        {
+            "name": "summarize",
+            "reference": {
+                "type": "command",
+                "display_id": "devrev/summarize",
+                "id": "don:integration:dvrv-us-1:devo/13GRGt258:namespace/devrev:command/summarize",
+                "id_v1": "don:DEV-13GRGt258:command:devrev/summarize",
+                "name": "summarize"
+            }
+        },
+        {
+            "name": "clone",
+            "reference": {
+                "type": "command",
+                "display_id": "devrev/clone",
+                "id": "don:integration:dvrv-us-1:devo/13GRGt258:namespace/devrev:command/clone",
+                "id_v1": "don:DEV-13GRGt258:command:devrev/clone",
+                "name": "clone"
+            }
+        }
+    ],
+    "created_by": {
+        "type": "sys_user",
+        "display_handle": "devrev-bot",
+        "display_id": "SYSU-1",
+        "display_name": "devrev-bot",
+        "full_name": "DevRev Bot",
+        "id": "don:identity:dvrv-us-1:devo/13GRGt258:sysu/1",
+        "id_v1": "don:DEV-13GRGt258:sys_user:SYSU-1",
+        "state": "active",
+        "thumbnail": "https://api.devrev.ai/internal/display-picture/~bot~.png"
+    },
+    "created_date": "2024-12-02T08:33:44.88Z",
+    "description": "Slash commands in DevRev powered by AI for more productivity.",
+    "display_id": "snap_in-a94068a8-7180-4a93-9b4a-b3f481b74ecd",
+    "event_sources": [
+        {
+            "name": "flow-devrev-slash-command-events",
+            "reference": {
+                "type": "event_source",
+                "display_id": "event_source-d0f92d5a-4778-4197-a326-b3f13dfa58c1",
+                "id": "don:integration:dvrv-us-1:devo/13GRGt258:event_source/d0f92d5a-4778-4197-a326-b3f13dfa58c1",
+                "id_v1": "don:DEV-13GRGt258:event_source:d0f92d5a-4778-4197-a326-b3f13dfa58c1"
+            }
+        }
+    ],
+    "id": "don:integration:dvrv-us-1:devo/13GRGt258:snap_in/a94068a8-7180-4a93-9b4a-b3f481b74ecd",
+    "id_v1": "don:DEV-13GRGt258:snap_in:snap_in-a94068a8-7180-4a93-9b4a-b3f481b74ecd",
+    "inputs_values": {},
+    "marketplace": {
+        "display_id": "marketplace-adcb26c3-7312-4920-8ad0-1947cd20c00a",
+        "id": "don:integration:dvrv-global:devo/0:marketplace/adcb26c3-7312-4920-8ad0-1947cd20c00a",
+        "id_v1": "don:DEV-0:marketplace:adcb26c3-7312-4920-8ad0-1947cd20c00a",
+        "name": "DevRev Marketplace",
+        "slug": "marketplace"
+    },
+    "marketplace_item_details": {
+        "marketplace": {
+            "display_id": "marketplace-adcb26c3-7312-4920-8ad0-1947cd20c00a",
+            "id": "don:integration:dvrv-global:devo/0:marketplace/adcb26c3-7312-4920-8ad0-1947cd20c00a",
+            "id_v1": "don:DEV-0:marketplace:adcb26c3-7312-4920-8ad0-1947cd20c00a",
+            "name": "DevRev Marketplace",
+            "slug": "marketplace"
+        },
+        "marketplace_item_slug": "slash-commands-snapin"
+    },
+    "marketplace_item_slug": "slash-commands-snapin",
+    "modified_by": {
+        "type": "sys_user",
+        "display_handle": "devrev-bot",
+        "display_id": "SYSU-1",
+        "display_name": "devrev-bot",
+        "full_name": "DevRev Bot",
+        "id": "don:identity:dvrv-us-1:devo/13GRGt258:sysu/1",
+        "id_v1": "don:DEV-13GRGt258:sys_user:SYSU-1",
+        "state": "active",
+        "thumbnail": "https://api.devrev.ai/internal/display-picture/~bot~.png"
+    },
+    "modified_date": "2024-12-12T07:42:51.594Z",
+    "name": "Slash Commands",
+    "service_account": {
+        "type": "service_account",
+        "display_handle": "DevRev Bot",
+        "display_id": "SVCACC-10",
+        "display_name": "DevRev Bot",
+        "id": "don:identity:dvrv-us-1:devo/13GRGt258:svcacc/10",
+        "id_v1": "don:DEV-13GRGt258:svc_acc:SVCACC-10",
+        "state": "active",
+        "thumbnail": "https://api.devrev.ai/internal/display-picture/DevRev%20Bot.png"
+    },
+    "snap_in_config": {},
+    "snap_in_version": {
+        "display_id": "snap_in_version-3cecde25-3652-4f30-b7bb-d018f50bda4e",
+        "id": "don:integration:dvrv-us-1:devo/0:snap_in_package/e7ec9a6a-da36-4656-8081-0f74954d96fc:snap_in_version/3cecde25-3652-4f30-b7bb-d018f50bda4e",
+        "slug": "slash-commands",
+        "version": {
+            "major": 0,
+            "minor": 0,
+            "patch": 2
+        }
+    },
+    "snap_in_version_semver": {
+        "major": 0,
+        "minor": 0,
+        "patch": 1
+    },
+    "snap_kit_actions": [
+        {
+            "name": "rephrase_handler",
+            "reference": {
+                "type": "snap_kit_action",
+                "display_id": "snap_kit_action-rephrase_handler",
+                "id": "don:integration:dvrv-us-1:devo/13GRGt258:snap_in/a94068a8-7180-4a93-9b4a-b3f481b74ecd:snap_kit_action/rephrase_handler"
+            }
+        }
+    ],
+    "status": "active"
+}
+{
+    "automations": [
+        {
+            "name": "generate_link_preview",
+            "reference": {
+                "type": "automation",
+                "display_id": "automation-bb42c24f-e4eb-4012-818f-dbb58fa6901c",
+                "id": "don:integration:dvrv-us-1:devo/13GRGt258:automation/bb42c24f-e4eb-4012-818f-dbb58fa6901c",
+                "name": "generate_link_preview"
+            }
+        }
+    ],
+    "created_by": {
+        "type": "sys_user",
+        "display_handle": "devrev-bot",
+        "display_id": "SYSU-1",
+        "display_name": "devrev-bot",
+        "full_name": "DevRev Bot",
+        "id": "don:identity:dvrv-us-1:devo/13GRGt258:sysu/1",
+        "id_v1": "don:DEV-13GRGt258:sys_user:SYSU-1",
+        "state": "active",
+        "thumbnail": "https://api.devrev.ai/internal/display-picture/~bot~.png"
+    },
+    "created_date": "2023-11-21T19:04:41.561Z",
+    "description": "Snap-in to unfurl links and references in comments",
+    "display_id": "snap_in-bfb9166e-7fbc-45dc-a031-fea15d4d1b3a",
+    "event_sources": [
+        {
+            "name": "devrev-webhook",
+            "reference": {
+                "type": "event_source",
+                "display_id": "event_source-f779a623-1892-4d7d-84ce-f916d7c05cc8",
+                "id": "don:integration:dvrv-us-1:devo/13GRGt258:event_source/f779a623-1892-4d7d-84ce-f916d7c05cc8",
+                "id_v1": "don:DEV-13GRGt258:event_source:f779a623-1892-4d7d-84ce-f916d7c05cc8"
+            }
+        }
+    ],
+    "id": "don:integration:dvrv-us-1:devo/13GRGt258:snap_in/bfb9166e-7fbc-45dc-a031-fea15d4d1b3a",
+    "id_v1": "don:DEV-13GRGt258:snap_in:snap_in-bfb9166e-7fbc-45dc-a031-fea15d4d1b3a",
+    "inputs_values": {},
+    "marketplace_item_details": {
+        "marketplace": {
+            "display_id": "marketplace-adcb26c3-7312-4920-8ad0-1947cd20c00a",
+            "id": "don:integration:dvrv-global:devo/0:marketplace/adcb26c3-7312-4920-8ad0-1947cd20c00a",
+            "id_v1": "don:DEV-0:marketplace:adcb26c3-7312-4920-8ad0-1947cd20c00a",
+            "name": "DevRev Marketplace",
+            "slug": "marketplace"
+        },
+        "marketplace_item_slug": "link-unfurl"
+    },
+    "marketplace_item_slug": "link-unfurl",
+    "modified_by": {
+        "type": "sys_user",
+        "display_handle": "devrev-bot",
+        "display_id": "SYSU-1",
+        "display_name": "devrev-bot",
+        "full_name": "DevRev Bot",
+        "id": "don:identity:dvrv-us-1:devo/13GRGt258:sysu/1",
+        "id_v1": "don:DEV-13GRGt258:sys_user:SYSU-1",
+        "state": "active",
+        "thumbnail": "https://api.devrev.ai/internal/display-picture/~bot~.png"
+    },
+    "modified_date": "2024-09-10T16:31:47.069Z",
+    "name": "Link Unfurling",
+    "service_account": {
+        "type": "service_account",
+        "display_handle": "Link Unfurl Bot",
+        "display_id": "SVCACC-6",
+        "display_name": "Link Unfurl Bot",
+        "id": "don:identity:dvrv-us-1:devo/13GRGt258:svcacc/6",
+        "id_v1": "don:DEV-13GRGt258:svc_acc:SVCACC-6",
+        "state": "active",
+        "thumbnail": "https://api.devrev.ai/internal/display-picture/Link%20Unfurl%20Bot.png"
+    },
+    "snap_in_config": {},
+    "snap_in_version": {
+        "display_id": "snap_in_version-e5c25e09-45a3-415f-9f63-34e2422734e4",
+        "id": "don:integration:dvrv-us-1:devo/0:snap_in_package/a7068d25-78c6-4112-8611-851f6565e6c5:snap_in_version/e5c25e09-45a3-415f-9f63-34e2422734e4",
+        "slug": "unfurl-link",
+        "version": {
+            "major": 0,
+            "minor": 0,
+            "patch": 3
+        }
+    },
+    "snap_in_version_semver": {
+        "major": 0,
+        "minor": 0,
+        "patch": 2
+    },
+    "status": "active"
+}
