@@ -30,7 +30,7 @@ const api = (api_key: string): AxiosInstance => {
     headers: {
       Authorization: `Bearer ${api_key}`,
       'Content-Type': 'application/json',
-      'cal-api-version': '2024-08-13',
+      'cal-api-version': '2024-06-14',
     },
   });
 };

@@ -16,137 +16,175 @@ export const views = {
   SCHEDULE: 'schedule',
 };
 
-export const BOOKINGSNAPBODY = {
-  elements: [
+export const slots = ['15min', '30min', '45min', '60min'];
+
+type SlotDuration = '15min' | '30min' | '45min' | '60min';
+
+export const generateTimeSlots = (slotDuration: SlotDuration) => {
+  const startTime = 12 * 60; // 12:00 PM in minutes
+  const endTime = 17 * 60; // 5:00 PM in minutes
+
+  const slotInMinutes = parseInt(slotDuration); // Convert '15min' -> 15
+
+  const slotsArray: string[] = [];
+  for (let time = startTime; time < endTime; time += slotInMinutes) {
+    const hours = Math.floor(time / 60);
+    const minutes = time % 60;
+    const formattedTime = `${hours}:${minutes.toString().padStart(2, '0')}`;
+    slotsArray.push(formattedTime);
+  }
+
+  return slotsArray;
+};
+
+export const BOOKINGSNAPBODY = (data: any) => {
+  const eventBtns = data.map((event: any) => ({
+    action_id: `booking_${event.id}`,
+    action_type: 'remote',
+    style: 'primary',
+    text: {
+      text: event.title,
+      type: 'plain_text',
+    },
+    type: 'button',
+    value: 'first',
+  }));
+
+  return [
     {
+      elements: [
+        {
+          direction: 'row',
+          elements: eventBtns,
+          justify: 'center',
+          type: 'actions',
+        },
+      ],
+      title: {
+        text: 'Select the booking type',
+        type: 'plain_text',
+      },
+      type: 'card',
+    },
+  ];
+};
+
+export const SCHEDULESNAPBODY = (slot: SlotDuration) => {
+  const slotTime = generateTimeSlots(slot);
+
+  const slotOptions = slotTime.map((el) => ({
+    text: {
+      text: el,
+      type: 'plain_text',
+    },
+    value: el,
+  }));
+
+  return [
+    {
+      action_id: 'reschedule',
+      action_type: 'remote',
+      alignment: 'end',
       direction: 'row',
       elements: [
         {
-          action_id: 'booking_first',
-          action_type: 'remote',
-          style: 'primary',
-          text: {
-            text: 'Let Meet',
-            type: 'plain_text',
-          },
-          type: 'button',
-          value: 'first',
-        },
-        {
-          action_id: 'booking_second',
-          action_type: 'remote',
-          style: 'primary',
-          text: {
-            text: 'Work together',
-            type: 'plain_text',
-          },
-          type: 'button',
-          value: 'second',
-        },
-        {
-          action_id: 'booking_third',
-          action_type: 'remote',
-          style: 'primary',
-          text: {
-            text: 'Discuss together',
-            type: 'plain_text',
-          },
-          type: 'button',
-          value: 'third',
-        },
-      ],
-      justify: 'center',
-      type: 'actions',
-    },
-  ],
-  title: {
-    text: 'Select the booking type',
-    type: 'plain_text',
-  },
-  type: 'card',
-};
-
-export const SCHEDULESNAPBODY = [
-  {
-    action_id: 'reschedule',
-    action_type: 'remote',
-    alignment: 'end',
-    direction: 'row',
-    elements: [
-      {
-        element: {
-          action_id: 'single_static_select',
-          initial_selected_option: {
-            text: {
-              text: 'Today',
-              type: 'plain_text',
-            },
-            value: 'today',
-          },
-          options: [
-            {
-              text: {
-                text: 'Tomorrow',
-                type: 'plain_text',
-              },
-              value: 'tomorrow',
-            },
-            {
+          element: {
+            action_id: 'single_static_select',
+            initial_selected_option: {
               text: {
                 text: 'Today',
                 type: 'plain_text',
               },
               value: 'today',
             },
-            {
-              text: {
-                text: 'Day After Tomorrow',
-                type: 'plain_text',
+            options: [
+              {
+                text: {
+                  text: 'Tomorrow',
+                  type: 'plain_text',
+                },
+                value: 'tomorrow',
               },
-              value: 'aftertomorrow',
+              {
+                text: {
+                  text: 'Today',
+                  type: 'plain_text',
+                },
+                value: 'today',
+              },
+              {
+                text: {
+                  text: 'Day After Tomorrow',
+                  type: 'plain_text',
+                },
+                value: 'aftertomorrow',
+              },
+            ],
+            placeholder: {
+              text: 'Placeholder here',
+              type: 'plain_text',
             },
-          ],
-          placeholder: {
-            text: 'Placeholder here',
+            type: 'static_select',
+          },
+          label: {
+            text: 'Select Day',
             type: 'plain_text',
           },
-          type: 'static_select',
+          type: 'input_layout',
         },
-        label: {
-          text: 'Select Day',
+        {
+          element: {
+            action_id: 'slot_select',
+            initial_selected_option: {
+              text: {
+                text: '12:00',
+                type: 'plain_text',
+              },
+              value: '12:00',
+            },
+            options: slotOptions,
+            placeholder: {
+              text: ' Select Slot',
+              type: 'plain_text',
+            },
+            type: 'static_select',
+          },
+          label: {
+            text: 'Select Slot',
+            type: 'plain_text',
+          },
+          type: 'input_layout',
+        },
+        {
+          element: {
+            action_id: 'user_picker',
+            // action_type: 'remote',
+            max_selected_items: 1,
+            type: 'user_picker',
+            user_types: ['dev_user'],
+          },
+          label: {
+            text: 'User',
+            type: 'plain_text',
+          },
+          type: 'input_layout',
+        },
+      ],
+      justify: 'between',
+      submit_action: {
+        action_id: 'submit',
+        style: 'primary',
+        text: {
+          text: 'Schedule',
           type: 'plain_text',
         },
-        type: 'input_layout',
+        type: 'button',
+        value: 'submit',
       },
-      {
-        element: {
-          action_id: 'user_picker',
-          // action_type: 'remote',
-          max_selected_items: 1,
-          type: 'user_picker',
-          user_types: ['dev_user'],
-        },
-        label: {
-          text: 'User',
-          type: 'plain_text',
-        },
-        type: 'input_layout',
-      },
-    ],
-    justify: 'between',
-    submit_action: {
-      action_id: 'submit',
-      style: 'primary',
-      text: {
-        text: 'Schedule',
-        type: 'plain_text',
-      },
-      type: 'button',
-      value: 'submit',
+      type: 'form',
     },
-    type: 'form',
-  },
-];
+  ];
+};
 
 export const RESCHEDULESNAPBODY = [
   {

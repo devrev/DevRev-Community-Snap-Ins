@@ -31,13 +31,9 @@ async function cal_command_handler(event: any) {
 
   console.log('me', me);
 
-  try {
-    const data = await calsdk.getEventTypes(me.data.username);
+  const data = await calsdk.getEventTypes(me.data.username);
 
-    console.log('meeting data', data);
-  } catch (e) {
-    console.log('error', e);
-  }
+  console.log('meeting data', data);
 
   try {
     const newTimelinWidgetOfcal = await devrevSDK.timelineEntriesCreate({
@@ -46,7 +42,7 @@ async function cal_command_handler(event: any) {
       object: event.payload.source_id,
       snap_kit_body: {
         body: {
-          snaps: [BOOKINGSNAPBODY],
+          snaps: BOOKINGSNAPBODY(data['data']),
         },
         snap_in_action_name: 'cal_widget',
         snap_in_id: event.context.snap_in_id,

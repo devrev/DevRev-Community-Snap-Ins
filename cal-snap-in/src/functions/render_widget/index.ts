@@ -12,6 +12,7 @@ import {
   TimelineCommentBodyType,
   TimelineEntriesUpdateRequestType,
 } from '@devrev/typescript-sdk/dist/auto-generated/public-devrev-sdk';
+import axios from 'axios';
 
 import { RESCHEDULESNAPBODY, SCHEDULESNAPBODY, views } from '../common/constants';
 
@@ -35,6 +36,8 @@ export const run = async (events: any[]) => {
 
   console.log('Current action: ', action);
 
+  console.log('after slots action: ', JSON.stringify(event));
+
   const isBooking = action.split('_')[0] === 'booking';
 
   if (isBooking) {
@@ -45,7 +48,7 @@ export const run = async (events: any[]) => {
       id: event.payload.context.entry_id,
       snap_kit_body: {
         body: {
-          snaps: SCHEDULESNAPBODY,
+          snaps: SCHEDULESNAPBODY('15min'),
         },
         snap_in_action_name: 'cal_widget',
         snap_in_id: event.context.snap_in_id,
@@ -57,13 +60,16 @@ export const run = async (events: any[]) => {
   }
 
   if (action === views.SCHEDULE) {
+    const data = SCHEDULESNAPBODY('15min');
+
+    console.log('slot', data);
     const updateTimelineEntryOnAction = await devrevSDK.timelineEntriesUpdate({
       body: event.payload.parameters,
       body_type: TimelineCommentBodyType.SnapKit,
       id: event.payload.context.entry_id,
       snap_kit_body: {
         body: {
-          snaps: SCHEDULESNAPBODY,
+          snaps: data,
         },
         snap_in_action_name: 'cal_widget',
         snap_in_id: event.context.snap_in_id,
@@ -76,6 +82,34 @@ export const run = async (events: any[]) => {
   }
 
   if (action === views.RESCHEDULE) {
+    //add api request here
+    const API_URL = 'https://api.cal.com/v2/bookings';
+    const API_TOKEN = 'cal_live_062aaa1387059dd9e1117a64477c9d37';
+
+    const formValues = event.payload.action.value;
+
+    const user = await devrevSDK.devUsersGet({
+      id: formValues.user_picker.value[0],
+    });
+
+    const requestData = {
+      attendee: {
+        email: user.data.dev_user.email,
+        name: user.data.dev_user.full_name,
+        timeZone: 'Asia/Calcutta',
+      },
+      eventTypeId: 142572,
+      start: '2025-02-26T06:30:00Z',
+    };
+
+    const response = await axios.post(API_URL, requestData, {
+      headers: {
+        Authorization: `Bearer ${API_TOKEN}`,
+        'Content-Type': 'application/json',
+        'cal-api-version': '2024-08-13',
+      },
+    });
+
     // return the schedule snap body again
     const updateTimelineEntryOnAction = await devrevSDK.timelineEntriesUpdate({
       body: event.payload.parameters,
