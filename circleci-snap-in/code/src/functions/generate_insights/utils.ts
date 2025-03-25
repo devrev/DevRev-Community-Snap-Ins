@@ -2,8 +2,9 @@ import axios from "axios";
 import { AxiosResponse } from "axios";
 import { LLMUtils } from "./llm_utils";
 import { client, betaSDK } from "@devrev/typescript-sdk";
+import { IssueAnalyzerAgent, SolutionRecommenderAgent, SolutionVerifierAgent } from "./agents";
 
-interface Artifact {
+export interface Artifact {
   path: string;
   url: string;
   node_index: number;
@@ -12,14 +13,19 @@ interface Artifact {
 
 export class JobArtifactAnalyzer {
   private readonly apiBaseUrl = "https://circleci.com/api/v2";
-  private llmUtils: LLMUtils;
+  public issueAnalyzerAgent: IssueAnalyzerAgent;
+  public solutionRecommenderAgent: SolutionRecommenderAgent;
+  public solutionVerifierAgent: SolutionVerifierAgent;
 
   constructor(
     private apiToken: string,
     private projectSlug: string,
     llmApiKey: string,
   ) {
-    this.llmUtils = new LLMUtils(llmApiKey, "mixtral-8x7b-32768", 4096);
+    const llmUtils = new LLMUtils(llmApiKey, "mixtral-8x7b-32768", 4096);
+    this.issueAnalyzerAgent = new IssueAnalyzerAgent(llmUtils);
+    this.solutionRecommenderAgent = new SolutionRecommenderAgent(llmUtils);
+    this.solutionVerifierAgent = new SolutionVerifierAgent(llmUtils);
   }
 
   async fetchJobArtifacts(jobId: string): Promise<Artifact[]> {
@@ -53,30 +59,8 @@ export class JobArtifactAnalyzer {
           `API request failed: ${error.response?.status} ${error.response?.data}`,
         );
       }
+      throw error;
     }
-
-    return [];
-  }
-
-  async generateInsights(data: any): Promise<string> {
-    const systemPrompt = `Analyze CI/CD artifacts to identify:
-1. Test failures or errors
-2. Performance metrics
-3. Security warnings
-4. Build configuration issues
-Present findings in markdown with severity levels.`;
-
-    const humanPrompt = `Artifact metadata is provided.
-Generate analysis summary.
-Metadata:`;
-
-    const response = await this.llmUtils.chatCompletion(
-      systemPrompt,
-      humanPrompt,
-      data,
-    );
-
-    return JSON.stringify(response, null, 2);
   }
 }
 
@@ -95,7 +79,6 @@ export const defaultResponse: HTTPResponse = {
 export class ApiUtils {
   public devrevSdk!: betaSDK.Api<HTTPResponse>;
 
-  // Constructor to initialize SDK instances
   constructor(endpoint: string, token: string) {
     this.devrevSdk = client.setupBeta({
       endpoint: endpoint,
@@ -103,7 +86,6 @@ export class ApiUtils {
     });
   }
 
-  // Create a timeline entry for a CircleCI step
   async createTimeLine(
     payload: betaSDK.TimelineEntriesCreateRequest,
   ): Promise<HTTPResponse> {
@@ -127,7 +109,6 @@ export class ApiUtils {
     }
   }
 
-  // Update a timeline entry
   async updateTimeLine(
     payload: betaSDK.TimelineEntriesUpdateRequest,
   ): Promise<HTTPResponse> {
