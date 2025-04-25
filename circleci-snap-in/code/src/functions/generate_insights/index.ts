@@ -23,7 +23,10 @@ async function handleEvent(event: any) {
   // Process artifacts through the agent pipeline
   const issueAnalysis = await analyzer.issueAnalyzerAgent.processArtifacts(artifacts);
   const recommendations = await analyzer.solutionRecommenderAgent.generateRecommendations(issueAnalysis);
-  const verifiedSolutions = await analyzer.solutionVerifierAgent.verifySolutions(recommendations);
+  
+  // Make sure recommendations is an array before proceeding
+  const validRecommendations = Array.isArray(recommendations) ? recommendations : [];
+  const verifiedSolutions = await analyzer.solutionVerifierAgent.verifySolutions(validRecommendations);
 
   const timelineBody = formatSolutionsAsMarkdown(jobId, issueAnalysis, verifiedSolutions);
 
@@ -40,24 +43,37 @@ function formatSolutionsAsMarkdown(jobId: string, analysis: any, solutions: any[
   
   // Add summary section
   markdown += `### Summary\n`;
-  markdown += `${analysis.summary}\n\n`;
+  // Handle null/undefined analysis
+  if (analysis && analysis.summary) {
+    markdown += `${analysis.summary}\n\n`;
+  } else {
+    markdown += `No analysis summary available.\n\n`;
+  }
   
   // Add detailed solutions
   markdown += `### Recommended Solutions\n`;
-  solutions.forEach((solution, index) => {
-    markdown += `#### ${index + 1}. ${solution.issue}\n`;
-    markdown += `- **Recommended Solution**: ${solution.recommendedSolution}\n`;
-    markdown += `- **Confidence**: ${solution.confidenceLevel}\n`;
-    markdown += `- **Verification Status**: ${solution.verificationStatus}\n`;
-    
-    if (solution.historicalMatches && solution.historicalMatches.length > 0) {
-      markdown += `- **Historical Matches**:\n`;
-      solution.historicalMatches.forEach((match: any) => {
-        markdown += `  - ${match}\n`;
-      });
-    }
-    markdown += `\n`;
-  });
+  
+  // Check if solutions array exists and has items
+  if (Array.isArray(solutions) && solutions.length > 0) {
+    solutions.forEach((solution, index) => {
+      if (solution && solution.issue) {
+        markdown += `#### ${index + 1}. ${solution.issue}\n`;
+        markdown += `- **Recommended Solution**: ${solution.recommendedSolution || 'No solution provided'}\n`;
+        markdown += `- **Confidence**: ${solution.confidenceLevel || 'Unknown'}\n`;
+        markdown += `- **Verification Status**: ${solution.verificationStatus || 'Not verified'}\n`;
+        
+        if (solution.historicalMatches && solution.historicalMatches.length > 0) {
+          markdown += `- **Historical Matches**:\n`;
+          solution.historicalMatches.forEach((match: any) => {
+            markdown += `  - ${match}\n`;
+          });
+        }
+        markdown += `\n`;
+      }
+    });
+  } else {
+    markdown += `No recommended solutions available.\n`;
+  }
 
   return markdown;
 }

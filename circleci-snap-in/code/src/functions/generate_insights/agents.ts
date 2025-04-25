@@ -2,7 +2,7 @@ import { LLMUtils } from "./llm_utils";
 import { Artifact } from "./utils";
 
 
-interface IssueAnalysis {
+export interface IssueAnalysis {
   errors: string[];
   warnings: string[];
   performanceIssues: string[];
@@ -10,13 +10,13 @@ interface IssueAnalysis {
   summary: string;
 }
   
-interface SolutionRecommendation {
+export interface SolutionRecommendation {
   issue: string;
   recommendedSolution: string;
   confidenceLevel: 'low' | 'medium' | 'high';
 }
   
-interface VerifiedSolution extends SolutionRecommendation {
+export interface VerifiedSolution extends SolutionRecommendation {
   verificationStatus: 'confirmed' | 'likely' | 'uncertain';
   historicalMatches?: string[];
 }
@@ -130,6 +130,12 @@ Known historical patterns:
 {historicalData}`;
 
     const verifiedSolutions: VerifiedSolution[] = [];
+
+    // Check if recommendations is undefined or not an array
+    if (!recommendations || !Array.isArray(recommendations)) {
+      console.warn("No valid recommendations to verify, returning empty array");
+      return verifiedSolutions;
+    }
 
     for (const recommendation of recommendations) {
       const response = await this.llmUtils.chatCompletion(
