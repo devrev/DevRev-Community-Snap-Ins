@@ -15,12 +15,12 @@ import {
 type CircleCIWebhook = WorkflowCompletedWebhook | JobCompletedWebhook;
 
 async function handleEvent(event: any) {
-  console.debug("[server] Handling event with payload ID: ", event.payload.id);
+  console.log("[server] Handling event with payload ID: ", event.payload.id);
   const token = event.context.secrets["service_account_token"];
   const endpoint = event.execution_metadata.devrev_endpoint;
 
   const apiUtils = new ApiUtils(endpoint, token);
-  console.debug("[server] Created ApiUtils instance");
+  console.log("[server] Created ApiUtils instance");
 
   const dev_user_id: string = "DEVU-1";
 
@@ -42,7 +42,7 @@ async function handleEvent(event: any) {
       });
       part_id = part_response.data.part.id;
       if (part_response.success) {
-        console.debug(
+        console.log(
           `[server] Created part for project ${project_name} successfully`,
         );
       } else {
@@ -52,7 +52,7 @@ async function handleEvent(event: any) {
       }
     } else {
       part_id = part.id;
-      console.debug(`[server] Part for project ${project_name} already exists`);
+      console.log(`[server] Part for project ${project_name} already exists`);
     }
   }
 
@@ -89,7 +89,7 @@ async function handleEvent(event: any) {
 
       work_id = work_response.data.work.id;
       if (work_response.success) {
-        console.debug(`[server] Created work for ${title} successfully`);
+        console.log(`[server] Created work for ${title} successfully`);
       } else {
         console.error(
           `[server] Failed to create work for ${title}. Err: ${work_response.message}`,
@@ -97,7 +97,7 @@ async function handleEvent(event: any) {
       }
     } else {
       work_id = work.id;
-      console.debug(`[server] Work for ${title} already exists`);
+      console.log(`[server] Work for ${title} already exists`);
     }
   }
 
@@ -108,7 +108,7 @@ async function handleEvent(event: any) {
     body: body,
   });
   if (timeline_event_response.success) {
-    console.debug(
+    console.log(
       `[server] Created timeline event for work ${work_id} successfully`,
     );
   } else {
