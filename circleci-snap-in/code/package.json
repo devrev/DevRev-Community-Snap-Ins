@@ -11,7 +11,7 @@
     "start:watch": "nodemon src/main.ts",
     "start:production": "node dist/main.js",
     "test:server": "nodemon --watch src --watch test test/main.ts",
-    "test": "jest --maxWorkers=1",
+    "test": "jest",
     "test:watch": "jest --watch"
   },
   "author": "Rushil Venkateswar",
