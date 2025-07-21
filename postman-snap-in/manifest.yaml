@@ -1,0 +1,123 @@
+# For reference: https://docs.devrev.ai/snap-ins/references/manifest.
+# Refactor the code based on your business logic.
+
+version: "2"
+name: "Postman Collection Runner"
+description: "Runs a Postman collection on time-intervals in DevRev Update"
+
+# This is the name displayed in DevRev where the Snap-In takes actions using the token of this service account.
+service_account:
+  display_name: Postman Bot
+
+# Add any external connection, reference: https://docs.devrev.ai/snap-ins/concepts#connection.
+keyrings:
+  organization:
+    - name: postman_access_token
+      display_name: Postman Access Token
+      description: Access token for Postman API
+      types:
+        - postman-access-token-type
+
+    - name: openai_access_token
+      display_name: OpenAI Access Token
+      description: Access token for OpenAI API
+      types:
+        - openai-access-token-type
+
+keyring_types:
+  - id: postman-access-token-type
+    name: postman-access-token
+    description: Postman Access Token Keyring Type
+    kind: "Secret"
+    secret_config:
+      secret_transform: ".postman_api_token"
+      fields:
+        - id: postman_api_token
+          name: Postman Api Token
+          description: Postman API token
+      token_verification:
+        url: "https://api.postman.com/me"
+        method: "GET"
+        headers:
+          X-Api-Key: "[API_KEY]"
+          Host: "api.postman.com"
+
+  - id: openai-access-token-type
+    name: openai-access-token
+    description: OpenAI Access Token Keyring Type
+    kind: "Secret"
+    secret_config:
+      secret_transform: ".openAI_token"
+      fields:
+        - id: openAI_token
+          name: OpenAI Token
+          description: OpenAI API token
+      token_verification:
+        url: "https://api.openai.com/v1/models"
+        method: "GET"
+        headers:
+          Authorization: "Bearer [API_KEY]"
+          Content-Type: "application/json"
+
+# Event source reference: https://docs.devrev.ai/snap-ins/references/event_sources#supported-event-source-types-and-their-event-types.
+event_sources:
+  organization:
+    - name: daily-timer-source
+      description: Timer event source based on Cron expression
+      display_name: Timer source
+      type: timer-events
+      config:
+        cron: "* 0 * * *"
+        metadata:
+          event_key: daily_events
+
+# Functions reference: https://docs.devrev.ai/snap-ins/references/functions.
+functions:
+  - name: run_postman_collection
+    description: "Runs a Postman collection with the given collection UID and creates issue for failed requests."
+
+  - name: show_collections
+    description: "Shows the list of collections in postman for the given postman api key."
+
+  - name: create_collection_article
+    description: "Creates an article (Documentation) for the given collection UID."
+
+# Automations reference: https://docs.devrev.ai/snap-ins/concepts#automation.
+automations:
+  #this will run into an error as there is no collection_id available while execution of the function.
+  - name: handle-work-created-event
+    source: daily-timer-source
+    event_types:
+      - timer.tick
+    function: run_postman_collection
+
+commands:
+  - name: show_collections
+    namespace: devrev
+    description: Shows the list of collections in postman for the given postman api key.
+    surfaces:
+      - surface: discussions
+        object_types:
+          - issue
+    usage_hint: "add connection in snap-in configuration"
+    function: show_collections
+
+  - name: run_postman_collection
+    namespace: devrev
+    description: Runs a collection and create issue for failed requests.
+    surfaces:
+      - surface: discussions
+        object_types:
+          - issue
+    usage_hint: "[collection_id]"
+    function: run_postman_collection
+
+  - name: create_collection_article
+    namespace: devrev
+    description: Creates an article for the given collection UID.
+    surfaces:
+      - surface: discussions
+        object_types:
+          - issue
+    usage_hint: "[collection_id]"
+    function: create_collection_article
